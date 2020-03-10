@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Branko3000</title>
+     <!-- <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet"> -->
+    <style>
+    #matrix{
+      font-size: 50px;
+      line-height: 2em;
+      letter-spacing: 1em;
+      font-family: monospace;
+      font-weight: bold;
+      position: fixed;
+      top: 0;
+      left: 0;
+      word-break: break-all;
+      width: 100%;
+      height: 100%;
+    }
+    #matrix-inner{
+      width: calc(100% - 1em);
+      height: calc(100% - 1em);
+      overflow: hidden;
+      position: fixed;
+      top: 0.5em;
+      left: 50%;
+      transform: translateX(calc(-50% + 0.5em));
+    }
+    #matrix *{
+      font-size: 1em;
+      font-family: inherit;
+      text-transform: uppercase;
+      display: inline;
+      margin: 0;
+      padding: 0;
+      color: inherit;
+      text-decoration: none;
+      font-weight: inherit;
+      list-style: none;
+      cursor: pointer;
+    }
+    .lego #matrix{
+      background: blue;
+      color: white;
+    }
+    .lego #matrix h1{
+      color: red;
+    }
+    .lego #matrix h2{
+      color: yellow;
+    }
+    .lego #matrix li{
+      color: green;
+    }
+    .cool #matrix{
+      background: blue;
+      color: white;
+    }
+    .cool #matrix h1{
+      color: red;
+    }
+    .cool #matrix h2{
+      color: black;
+    }
+    .cool #matrix a{
+      color: black;
+    }
+    .cool #matrix li a{
+      color: white;
+    }
+    </style>
+  </head>
+  <body class='cool'>
+    <div id='matrix-container'>
+      <!--HEADER-->
+      <header class='header'>
+        <h1 class='title' id='matrix-title'>Branko3000</h1>
+        <aside class='description'></aside>
+        <!--MENU-->
+        <nav class='menu'>
+          <ul class='list'>
+            <li class='item'>
+              <a class='link' href='#projekte' title='Projekte'>Projekte</a>
+            </li>
+            <li class='item'>
+              <a class='link' href='#webseiten' title='Webseiten'>Webseiten</a>
+            </li>
+          </ul>
+        </nav>
+        <!--TIMER-->
+        <aside class='timer'><span id='hours'>00</span><span class='divider'>:</span><span id='minutes'>00</span></aside>
+      </header>
+
+      <!--SECTIONS-->
+      <main class='sections' id='matrix-sections'>
+        <section class='section' id='projekte'>
+          <h2 class='title'>Projekte</h2>
+          <ul class='list'>
+            <li class='item'>
+              <a class='link' href='https://abcfestival.de' title='ABC*-Festival' target='_blank'>ABC*-Festival</a>
+            </li>
+            <li class='item'>
+              <a class='link' href='https://xyzprojekt.de' title='XZY*-Projekt' target='_blank'>XZY*-Projekt</a>
+            </li>
+            <li class='item'>
+              <a class='link' href='https://frappant.org' title='Frappant e.V.' target='_blank'>Frappant e.V.</a>
+            </li>
+            <li class='item'>
+              <a class='link' href='https://hacker-school.de/' title='Hacker School' target='_blank'>Hacker School</a>
+            </li>
+          </ul>
+        </section>
+        <section class='section' id='webseiten'>
+          <h2 class='title'>Webseiten</h2>
+          <ul class='list'>
+            <li class='item'>
+              <a class='link' href='https://abcfestival.de' title='abcfestival.de' target='_blank'>abcfestival.de</a>
+            </li>
+            <li class='item'>
+              <a class='link' href='https://xyzprojekt.de' title='xyzprojekt.de' target='_blank'>xyzprojekt.de</a>
+            </li>
+            <li class='item'>
+              <a class='link' href='https://ankelietzke.de' title='ankelietzke.de' target='_blank'>ankelietzke.de</a>
+            </li>
+            <li class='item'>
+              <a class='link' href='https://kailietzke.de' title='kailietzke.de' target='_blank'>kailietzke.de</a>
+            </li>
+            <li class='item'>
+              <a class='link' href='https://puncheurz.com' title='puncheurz.com' target='_blank'>puncheurz.com</a>
+            </li>
+          </ul>
+        </section>
+      </main>
+      <!--FOOTER-->
+      <footer class='footer'>
+        <ul class='list' id='matrix-links'>
+          <li class='item'>
+            <a class='link' href='https://github.com/branko3000' title='Github' target='_blank'>Github</a>
+          </li>
+          <li class='item'>
+            <a class='link' href='https://soundcloud.com/branko3000' title='Soundcloud' target='_blank'>Soundcloud</a>
+          </li>
+          <li class='item'>
+            <a class='link' href='mailto:johannes.hassenstein@pm.me' title='Kontakt' target='_blank'>Kontakt</a>
+          </li>
+          <li class='item'>
+            <a class='link' href='#impressum' title='Impressum'>Impressum</a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+    <div id='matrix'><div id='matrix-inner'></div></div>
+    <!--SCRIPTS-->
+    <script>
+      window.addEventListener('load',setMatrix);
+      function setMatrix(){
+        window.matrix = new Matrix;
+        matrix.generateText(80,0);
+      }
+      function Matrix(){
+        this.active = 0;
+        this.position = 0;
+        this.length = 70;
+        this.textLength = this.length;
+        this.text = '';
+        this.config = {};
+        this.config.title = document.getElementById('matrix-title').innerText;
+        this.textLength -= this.config.title.length + 1;
+        this.config.links = [];
+        var linkContainer = document.getElementById('matrix-links');
+        var links = [].slice.call(linkContainer.getElementsByTagName('a'));
+        for(var link in links){
+          this.config.links.push({text: links[link].innerText, url: links[link].getAttribute('href')});
+          this.textLength -= links[link].innerText.length + 1;
+        }
+        this.textLength++;
+        this.config.sections = [];
+        var sectionsContainer = document.getElementById('matrix-sections');
+        var sections = [].slice.call(sectionsContainer.getElementsByTagName('section'));
+        for(var section in sections){
+          var _section = {title: sections[section].getElementsByTagName('h2')[0].innerText, links: []};
+          this.textLength -= _section.title.length;
+          var _links = [].slice.call(sections[section].getElementsByTagName('a'));
+          for(var _link in _links){
+            _section.links.push({text: _links[_link].innerText, url: _links[_link].getAttribute('href')});
+          }
+          this.config.sections.push(_section);
+        }
+        document.body.removeChild(document.getElementById('matrix-container'));
+        console.log(this.textLength);
+        this.activate = function(i){
+          this.active = i;
+          this.generateText(80,0);
+        }
+        this.generateText = function(length,position){
+          var prolog = {content: "<h1>" + this.config.title + "</h1>", length: this.config.title.length};
+          var epilog = {content: "", length: 0};
+          for(var link in this.config.links){
+            epilog.length += this.config.links[link].text.length;
+            epilog.content += "<a href='" + this.config.links[link].url + "' target='_blank'>" + this.config.links[link].text + "</a> ";
+          }
+          var text = {content: "", length: 0};
+          for(var section in this.config.sections){
+            text.content += "<h2 onclick='matrix.activate(" + section + ")'>" + this.config.sections[section].title + "</h2> ";
+            if(this.active == section){
+              text.content += "<ul>";
+              for(var link in this.config.sections[section].links){
+                text.content += "<li><a href='" + this.config.sections[section].links[link].url + "' target='_blank'>" + this.config.sections[section].links[link].text + "</a> </li>"
+              }
+              text.content += "</ul>"
+            }
+          }
+          document.getElementById('matrix-inner').innerHTML = prolog.content + ' ' + text.content + ' ' + epilog.content;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+<footer class='footer'>
+</footer>
+{{ $scripts := resources.Get  "js/scripts.js" | minify | fingerprint }}
+<script src="{{ $scripts.Permalink }}"></script>
