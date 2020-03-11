@@ -5,7 +5,11 @@
     {{else}}
     <h2 class='subtitle' id='clock'>00:00:00</h2>
     {{end}}
+    {{if eq .Params.title "Impressum"}}
+    <a class='link' href='mailto:johannes.hassenstein@pm.me' target='_blank'>Kontakt</a>
+    {{else}}
     <a class='link' href='/impressum'>Impressum</a>
+    {{end}}
     <!-- <nav class='menu'>
       <ul>
         {{ range .Site.Menus.main }}

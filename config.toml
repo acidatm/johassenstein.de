@@ -6,9 +6,23 @@ defaultContentLanguage = 'de'
 	hrefTargetBlank = true
 [params]
 description = 'Ruf mich vor der Arbeit an, ich battle dich in Shorts'
-news = [["24/7 vor deinem Haus wie OG Keemo","/"]
+news = [
+["Check out ABC*-Festival","https://abcfestival.de"],
+["24/7 vor deinem Haus wie OG Keemo","/"],
+["Ruf mich vor der Arbeit an, ich battle dich in Shorts","/"],
 ]
 eggs = [
-  "Hi",
+  "",
   "666"
 ]
+[menu]
+[[menu.main]]
+identifier = "kontakt"
+name = "Kontakt"
+url = "mailto:johannes.hassenstein@pm.me"
+weight = 1
+[[menu.main]]
+identifier = "github"
+name = "Github"
+url = "https://github.com/branko3000"
+weight = 2

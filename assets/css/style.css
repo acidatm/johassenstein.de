@@ -106,6 +106,6 @@ a{
     margin: 50vh 1em;
   }
 }
-h2,p{
+.container h2, .container p{
   margin-bottom: 1em;
 }
