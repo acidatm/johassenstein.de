@@ -1,13 +1,11 @@
 <header class='header'>
-    <a href='/'>
-      <h1 class='title'>Branko <span id='counter'>3000</span></h1>
-    </a>
+    <h1 class='title'><a href='/'>Branko </a><span id='counter'>3000</span></h1>
     {{if isset .Params "title"}}
     <h2 class='subtitle'>{{.Title}}</h2>
     {{else}}
     <h2 class='subtitle' id='clock'>00:00:00</h2>
     {{end}}
-    <a class='link' href='/impressum'>Legal</a>
+    <a class='link' href='/impressum'>Impressum</a>
     <!-- <nav class='menu'>
       <ul>
         {{ range .Site.Menus.main }}

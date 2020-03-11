@@ -8,7 +8,7 @@ body{
   font-family: 'Roboto', sans-serif;
 }
 *{
-  font-size: 24px;
+  font-size: calc(2vh + 1vw);
   line-height: 1em;
   color: inherit;
   text-decoration: none;
@@ -19,42 +19,53 @@ body{
   padding: 0;
   user-select: none;
 }
-.header *{
+.header{
   position: fixed;
-  top: 1em;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3em;
+  background: white;
 }
 .header .title{
   left: 2em;
+  position: fixed;
+  top: 1em;
 }
 .header .subtitle{
+  position: fixed;
+  top: 1em;
   left: 50%;
   transform: translateX(-50%);
 }
 .header .link{
+  position: fixed;
+  top: 1em;
   right: 2em;
 }
 .footer{
   position: fixed;
   padding: 1em 0;
-  left: 2em;
+  margin: 0 2em;
+  left: 0;
   bottom: 0;
   width: calc(100% - 4em);
   overflow: hidden;
+  background: white;
 }
 .container{
-  position: fixed;
-  top: 3em;
-  left: 2em;
   width: calc(100% - 4em);
-  height: calc(100% - 6em);
-  background: black;
-  overflow: hidden;
-  overflow-y: scroll;
-  color: white;
-  text-align: center;
+  height: auto;
+  text-align: left;
+  margin: 50vh 2em;
+  overflow-x: hidden;
 }
 .container li{
-  display: inline-block;
+  display: inline;
+  margin-bottom: 50vh;
+}
+.container ul:last-of-type li:last-of-type{
+  margin-bottom: 0;
 }
 #newsfeed{
   white-space: nowrap;
@@ -69,5 +80,21 @@ body{
   }
   100%{
     transform: translateX(-50%);
+  }
+}
+@media (orientation: portrait){
+  .header .title{
+    left: 1em;
+  }
+  .header .link{
+    right: 1em;
+  }
+  .footer{
+    margin: 0 1em;
+    width: calc(100% - 2em);
+  }
+  .container{
+    width: calc(100% - 2em);
+    padding: 50vh 1em;
   }
 }
