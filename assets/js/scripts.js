@@ -1,12 +1,19 @@
 window.addEventListener('load',function(){
   startTimer();
   startCounter();
-  addInfiniscroll();
+  var eggs = getEggs();
+  addInfiniscroll(eggs);
   spreadList();
   initNewsfeed();
   setLinkHover();
 });
 
+function getEggs(){
+  var eggMeta = document.head.querySelector("[name~=eggs][content]")
+  var eggs = eggMeta.content.split(',');
+  eggMeta.remove();
+  return eggs;
+}
 function startTimer(){
   if(document.getElementById('clock')){
     var timer = document.getElementById('clock');
@@ -23,30 +30,41 @@ function startTimer(){
 }
 
 function spreadList(){
-  var lis = [].slice.call(document.getElementById('container').getElementsByTagName('li'));
+  var container = document.getElementById('container');
+  var lis = [].slice.call(container.getElementsByTagName('li'));
   for(var _li in lis){
     var li = lis[_li];
-    li.style.marginLeft = Math.random() * (window.innerWidth - li.offsetWidth) + 'px';
+    randomMargin(li,container);
   }
+}
+function randomMargin(e,container){
+  e.style.marginLeft = Math.random() * (container.offsetWidth - e.offsetWidth) + 'px';
 }
 
 function startCounter(){
   var counter = document.getElementById('counter');
   window.addEventListener('scroll',function(){
+    var num = 3000 + (Math.floor(window.pageYOffset) % 7000)
     counter.innerText = 3000 + (Math.floor(window.pageYOffset) % 7000);
   },counter);
 }
 
-function addInfiniscroll(){
+function addInfiniscroll(eggs){
   var container = document.getElementById('container');
   var html = container.innerHTML;
   container.innerHTML += html;
   window.addEventListener('scroll',function(){
-    if(window.pageYOffset + window.innerHeight * 2 >= container.offsetHeight){
-      // if(container.offsetHeight > 10000){
-      //   window.scrollTo(0,0);
-      // }
+    if(window.pageYOffset + window.innerHeight * 2 >= container.offsetHeight && window.pageYOffset < 7000){
+      Math.random() > 0.9 ?
+      container.innerHTML += eggs[Math.floor(Math.random() * eggs.length)]
+      :
       container.innerHTML += html;
+      if(Math.random() > 0.9){
+        var lis = container.getElementsByTagName('li');
+        for(var i = 1; i > 0; i--){
+          randomMargin(lis[lis.length - i],container);
+        }
+      }
     }
   },container,html);
 }

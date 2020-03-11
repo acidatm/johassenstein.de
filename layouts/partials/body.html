@@ -1,6 +1,12 @@
 {{ partial "header.html" . }}
-<canvas id="canvas" width="300" height="300"></canvas>
 <main class='container' id='container'>
   {{.Content}}
+  <ul>
+  {{range .Site.Menus.main}}
+    <li>
+      <a href='{{.URL}}' target='_blank'>{{.Name}}</a>
+    </li>
+  {{end}}
+  </ul>
 </main>
 {{ partial "footer.html" . }}
