@@ -1,5 +1,12 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "Branko 3000"
+defaultContentLanguage = 'de'
 [params]
 description = 'Ruf mich vor der Arbeit an, ich battle dich in Shorts'
+news = [["24/7 vor deinem Haus wie OG Keemo","/"]
+]
+    identifier = "kontakt"
+    name = "kontakt"
+    url = "mailto:johannes.hassenstein@pm.me"
+    weight = 1

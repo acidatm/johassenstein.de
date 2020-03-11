@@ -1,4 +1,5 @@
 <footer class='footer'>
+{{ partial "newsfeed.html" . }}
 </footer>
-{{ $scripts := resources.Get  "js/scripts.js" | minify | fingerprint }}
+{{ $scripts := resources.Get  "js/scripts.js" | fingerprint }}
 <script src="{{ $scripts.Permalink }}"></script>

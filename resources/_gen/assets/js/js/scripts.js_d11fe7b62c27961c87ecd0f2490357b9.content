@@ -1,3 +1,2 @@
-window.onload=function(){var container=document.getElementsByClassName('main')[0].getElementsByTagName('ul')[0]
-var planes=[].slice.call(container.getElementsByTagName('li'));for(var plane in planes){console.log(planes[plane].parentNode);if(planes[plane].parentNode===container){planes[plane].style.left=plane+'rem';planes[plane].style.bottom=plane+'rem';planes[plane].style.zIndex=planes.length-plane;}}
-var main=document.getElementsByClassName('main')[0];main.style.width='calc(50vw + '+(planes.length-1)+'rem)';main.style.height='calc(50vw + '+(planes.length-1)+'rem)';}
+window.addEventListener('load',function(){startTimer();startCounter();addInfiniscroll();});function startTimer=function(){if(document.getElementById('timer')){var timer=document.getElementById('timer');setInterval(function(){function pad(n){return String("00"+n).slice(-2);}
+var date=new Date();timer.innerHTML=pad(date.getHours())+'<span>:</span>'+pad(date.getMinutes())+'<span>:</span>'+pad(date.getSeconds());},1000,timer);}}

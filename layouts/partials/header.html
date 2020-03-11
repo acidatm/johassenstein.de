@@ -1,6 +1,20 @@
 <header class='header'>
-  <ul>
-    <li>{{.Title}}</li>
-    <li>{{.Site.Params.description}}
-  </ul>
+    <a href='/'>
+      <h1 class='title'>Branko <span id='counter'>3000</span></h1>
+    </a>
+    {{if isset .Params "title"}}
+    <h2 class='subtitle'>{{.Title}}</h2>
+    {{else}}
+    <h2 class='subtitle' id='clock'>00:00:00</h2>
+    {{end}}
+    <a class='link' href='/impressum'>Legal</a>
+    <!-- <nav class='menu'>
+      <ul>
+        {{ range .Site.Menus.main }}
+        <li>
+          <a href="{{.URL}}">{{ .Name }}</a>
+        </li>
+        {{end}}
+      </ul>
+    </nav> -->
 </header>

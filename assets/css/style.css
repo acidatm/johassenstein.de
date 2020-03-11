@@ -1,56 +1,73 @@
 html,body{
-  font-size: 18px;
-  line-height: 1rem;
-  font-family: monospace;
-  padding: 0;
   margin: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background: black;
-  color: white;
+  padding: 0;
 }
-.header,.footer{
-  position: fixed;
-  width: 100%;
-  height: auto;
-  padding: 1rem 0;
-  background: black;
+body{
+  background: white;
+  color: black;
+  font-family: 'Roboto', sans-serif;
 }
-.header{
-  top: 0;
+*{
+  font-size: 24px;
+  line-height: 1em;
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+.header *{
+  position: fixed;
+  top: 1em;
+}
+.header .title{
+  left: 2em;
+}
+.header .subtitle{
+  left: 50%;
+  transform: translateX(-50%);
+}
+.header .link{
+  right: 2em;
 }
 .footer{
-  bottom: 0;
-}
-.main{
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  width: 50vw;
-  height: 50vw;
-}
-.main>ul>li{
-  position: absolute;
+  padding: 1em 0;
+  left: 2em;
   bottom: 0;
-  left: 0;
-  width: 50vw;
-  height: 50vw;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-.main>ul>li:not(.active):not(:hover):not(:active){
-  opacity: 0.2;
+  width: calc(100% - 4em);
   overflow: hidden;
 }
-.main>ul>li.plane.active,
-.main>ul>li.plane:active,
-.main>ul>li.plane:hover{
-  opacity: 1;
-  z-index: 100 !important;
-  font-weight: bold;
+.container{
+  position: fixed;
+  top: 3em;
+  left: 2em;
+  width: calc(100% - 4em);
+  height: calc(100% - 6em);
+  background: black;
+  overflow: hidden;
+  overflow-y: scroll;
+  color: white;
+  text-align: center;
+}
+.container li{
+  display: inline-block;
+}
+#newsfeed{
+  white-space: nowrap;
+  animation: news 20s infinite linear;
+}
+.footer:hover #newsfeed{
+  animation-play-state: paused;
+}
+@keyframes news{
+  0%{
+    transform: translateX(0%);
+  }
+  100%{
+    transform: translateX(-50%);
+  }
 }

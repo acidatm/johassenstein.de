@@ -1,0 +1,5 @@
+<div id='newsfeed'>
+  {{range .Site.Params.news}}
+  <a class='item' href='{{index . 1}}'>{{index . 0}}</a>
+  {{end}}
+</div>
