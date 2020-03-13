@@ -10,11 +10,12 @@ body{
   background: white;
   color: black;
   font-family: 'Roboto', sans-serif;
-  cursor: url('/cursor.png'), auto;
+  cursor: url('/ufo.png'), auto;
   overflow-x:hidden;
+  padding-bottom: 50vh;
 }
 a{
-  cursor: url('/pointer.png'), pointer;
+  cursor: url('/ufo.png'), pointer;
 }
 *{
   font-size: calc(1.8vh + 0.9vw);
@@ -66,7 +67,7 @@ a{
   width: calc(100% - 4em);
   height: auto;
   text-align: left;
-  margin: 50vh 2em;
+  padding: 50vh 2em 0 2em;
   overflow: hidden;
 }
 .container li{
@@ -103,7 +104,7 @@ a{
   }
   .container{
     width: calc(100% - 2em);
-    margin: 50vh 1em;
+    padding: 50vh 1em 0 1em;
   }
 }
 .container h2, .container p{

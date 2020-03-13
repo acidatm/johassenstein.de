@@ -8,12 +8,13 @@ defaultContentLanguage = 'de'
 description = 'Ruf mich vor der Arbeit an, ich battle dich in Shorts'
 news = [
 ["Check out ABC*-Festival","https://abcfestival.de"],
-["24/7 vor deinem Haus wie OG Keemo","/"],
-["Ruf mich vor der Arbeit an, ich battle dich in Shorts","/"],
+["Ruf mich vor der Arbeit an, ich battle dich in Shorts","/"]
 ]
 eggs = [
-  "",
-  "666"
+  "Simplicity",
+  "Functionality",
+  "Repition",
+  "Randomness"
 ]
 [menu]
 [[menu.main]]

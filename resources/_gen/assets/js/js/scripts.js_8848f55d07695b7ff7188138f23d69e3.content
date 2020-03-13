@@ -1,19 +1,19 @@
 window.addEventListener('load',function(){
   startTimer();
-  startCounter();
-  var eggs = getEggs();
-  addInfiniscroll(eggs);
-  spreadList();
+  var size = [].slice.call(document.getElementById('container').getElementsByTagName('li')).length;
+  addInfiniscroll();
+  spreadList(size);
+  copyBody();
   initNewsfeed();
   setLinkHover();
 });
 
-function getEggs(){
-  var eggMeta = document.head.querySelector("[name~=eggs][content]")
-  var eggs = eggMeta.content.split(',');
-  eggMeta.remove();
-  return eggs;
-}
+// function getEggs(){
+//   var eggMeta = document.head.querySelector("[name~=eggs][content]")
+//   var eggs = eggMeta.content.split(',');
+//   eggMeta.remove();
+//   return eggs;
+// }
 function startTimer(){
   if(document.getElementById('clock')){
     var timer = document.getElementById('clock');
@@ -29,44 +29,49 @@ function startTimer(){
   }
 }
 
-function spreadList(){
+function spreadList(listSize){
   var container = document.getElementById('container');
-  var lis = [].slice.call(container.getElementsByTagName('li'));
-  for(var _li in lis){
-    var li = lis[_li];
-    randomMargin(li,container);
+  var list = [].slice.call(container.getElementsByTagName('li'));
+  var max =  Number(window.getComputedStyle(container).getPropertyValue("width").replace('px',''));
+  console.log(max);
+  for(var i = 0; i < listSize; i++){
+    randomMargin(list[i],max);
   }
 }
-function randomMargin(e,container){
-  e.style.marginLeft = Math.random() * (container.offsetWidth - e.offsetWidth) + 'px';
-}
-
-function startCounter(){
-  var counter = document.getElementById('counter');
-  window.addEventListener('scroll',function(){
-    var num = 3000 + (Math.floor(window.pageYOffset) % 7000)
-    counter.innerText = 3000 + (Math.floor(window.pageYOffset) % 7000);
-  },counter);
+function randomMargin(e,max){
+  e.style.marginLeft = Math.random() * (max - e.offsetWidth) + 'px';
 }
 
 function addInfiniscroll(eggs){
   var container = document.getElementById('container');
-  var html = container.innerHTML;
-  container.innerHTML += html;
+  while(container.offsetHeight < 7000){
+    container.innerHTML += container.innerHTML;
+  }
+  container.style.height = '7000px';
+  var max = container.offsetHeight;
+  var counter = document.getElementById('counter');
   window.addEventListener('scroll',function(){
-    if(window.pageYOffset + window.innerHeight * 2 >= container.offsetHeight && window.pageYOffset < 7000){
-      Math.random() > 0.9 ?
-      container.innerHTML += eggs[Math.floor(Math.random() * eggs.length)]
-      :
-      container.innerHTML += html;
-      if(Math.random() > 0.9){
-        var lis = container.getElementsByTagName('li');
-        for(var i = 1; i > 0; i--){
-          randomMargin(lis[lis.length - i],container);
-        }
-      }
+    var perc = window.pageYOffset / max;
+    if(perc >= 1){
+      window.scrollTo(1,0);
+      document.body.scrollTop = 1;
+      document.documentElement.scrollTop = 1;
     }
-  },container,html);
+    else if(perc <= 0){
+      window.scrollTo(max - 1,0);
+      document.body.scrollTop = max -1;
+      document.documentElement.scrollTop = max-1;
+    }
+    counter.innerText = 3000 + Math.floor(perc * 7000);
+  }, max,counter);
+}
+
+function copyBody(){
+  var container = document.getElementById('container');
+  var copy = document.createElement('div');
+  copy.className = 'container';
+  copy.innerHTML = container.innerHTML;
+  document.body.appendChild(copy);
 }
 
 function initNewsfeed(){
@@ -87,13 +92,16 @@ function setLinkHover(){
     var hover = hovers[_hover];
     var inner = '';
     for(var i = 0; i < hover.innerHTML.length; i++){
-      inner += '<span class="blush" data-color="red" onmouseover="blush(this)">' + hover.innerHTML.charAt(i) + '</span>';
+      inner += '<span data-blushed="0" onmouseover="blush(this)">' + hover.innerHTML.charAt(i) + '</span>';
     }
     hover.innerHTML = inner;
   }
 }
 function blush(e){
- e.style.color = e.getAttribute('data-color');
+  var colors = ['red','blue','black']
+  var blushed = Number(e.getAttribute('data-blushed'));
+  e.setAttribute('data-blushed', blushed + 1);
+  e.style.color = colors[blushed % colors.length];
 }
 function prepareCanvas(){
   var canvas = document.getElementById('canvas');
