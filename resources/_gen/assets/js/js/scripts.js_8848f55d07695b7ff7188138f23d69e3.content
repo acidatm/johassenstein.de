@@ -33,7 +33,6 @@ function spreadList(listSize){
   var container = document.getElementById('container');
   var list = [].slice.call(container.getElementsByTagName('li'));
   var max =  Number(window.getComputedStyle(container).getPropertyValue("width").replace('px',''));
-  console.log(max);
   for(var i = 0; i < listSize; i++){
     randomMargin(list[i],max);
   }
