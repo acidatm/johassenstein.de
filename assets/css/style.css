@@ -10,12 +10,16 @@ body{
   background: white;
   color: black;
   font-family: 'Roboto', sans-serif;
-  cursor: url('/ufo.png'), auto;
+  /* cursor: url('/ufo.png'), auto; */
+  /* cursor: none; */
+  cursor: url('/cow.png'), auto;
   overflow-x:hidden;
   padding-bottom: 50vh;
 }
 a{
-  cursor: url('/ufo.png'), pointer;
+  /* cursor: url('/ufo.png'), pointer; */
+  /* cursor: none; */
+  cursor: inherit;
 }
 *{
   font-size: calc(1.8vh + 0.9vw);
@@ -109,4 +113,15 @@ a{
 }
 .container h2, .container p{
   margin-bottom: 1em;
+}
+#ufo{
+  position: fixed;
+  background: url('/ufo.png');
+  width: 60px;
+  height: 42px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: translate(-15px,-300%);
+  pointer-events: none;
+  transition: all 1s ease-in-out;
 }

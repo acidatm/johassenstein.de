@@ -6,6 +6,7 @@ window.addEventListener('load',function(){
   copyBody();
   initNewsfeed();
   setLinkHover();
+  setupCursor();
 });
 
 // function getEggs(){
@@ -97,7 +98,7 @@ function setLinkHover(){
   }
 }
 function blush(e){
-  var colors = ['red','blue','black']
+  var colors = ['white','black']
   var blushed = Number(e.getAttribute('data-blushed'));
   e.setAttribute('data-blushed', blushed + 1);
   e.style.color = colors[blushed % colors.length];
@@ -106,4 +107,15 @@ function prepareCanvas(){
   var canvas = document.getElementById('canvas');
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
+}
+
+function setupCursor(){
+  // document.body.style.cursor = 'none';
+  var cursor = document.createElement('div');
+  cursor.id = 'ufo';
+  document.body.appendChild(cursor)
+  window.addEventListener('mousemove',function(e){
+    cursor.style.top = e.clientY;
+    cursor.style.left = e.clientX;
+  },cursor);
 }
