@@ -1,7 +1,9 @@
 window.addEventListener('load', function(){
   var silencedURLS = [
     'bodydrumanddance.com',
-    'latour-entwicklung.de'
+    'latour-entwicklung.de',
+    'aliciaaswani.de',
+    'ba-fitness.de'
   ]
   var credit = document.getElementById('credit');
   var year = new Date().getFullYear();
