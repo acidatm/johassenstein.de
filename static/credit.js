@@ -1,6 +1,7 @@
 window.addEventListener('load', function(){
   var silencedURLS = [
-    'bodydrumanddance.com'
+    'bodydrumanddance.com',
+    'latour-entwicklung.de'
   ]
   var credit = document.getElementById('credit');
   var year = new Date().getFullYear();
