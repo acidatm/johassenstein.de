@@ -2,7 +2,12 @@
 <head>
   {{ partial "head.html" . }}
 </head>
-<body>
-  {{ partial "body.html" . }}
+<body class='index'>
+  {{ partial "header.html" . }}
+  <main class='container' id='container'>
+    {{ partial "index.html" . }}
+  </main>
+  {{ partial "footer.html" . }}
+<script src='credit.js'></script>
 </body>
 </html>

@@ -125,3 +125,25 @@ a{
   pointer-events: none;
   transition: all 1s ease-in-out;
 }
+/*INDEX*/
+.index .container .inner{
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.index .container ul{
+  display: inline-block;
+  vertical-align: top;
+}
+.index .container ul li{
+  display: block;
+}
+.index .container ul.left{
+  text-align: right;
+}
+.index .container ul.center{
+  text-align: left;
+}
+.index .container ul.right{
+  text-align: left;
+}

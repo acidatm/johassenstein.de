@@ -42,27 +42,30 @@ function randomMargin(e,max){
   e.style.marginLeft = Math.random() * (max - e.offsetWidth) + 'px';
 }
 
-function addInfiniscroll(eggs){
+function addInfiniscroll(){
   var container = document.getElementById('container');
-  while(container.offsetHeight < 7000){
-    container.innerHTML += container.innerHTML;
-  }
-  container.style.height = '7000px';
+  // while(container.offsetHeight < 7000){
+  //   container.innerHTML += container.innerHTML;
+  // }
+  // container.style.height = '7000px';
   var max = container.offsetHeight;
   var counter = document.getElementById('counter');
   window.addEventListener('scroll',function(){
     var perc = window.pageYOffset / max;
-    if(perc >= 1){
-      window.scrollTo(1,0);
-      document.body.scrollTop = 1;
-      document.documentElement.scrollTop = 1;
-    }
-    else if(perc <= 0){
-      window.scrollTo(max - 1,0);
-      document.body.scrollTop = max -1;
-      document.documentElement.scrollTop = max-1;
-    }
-    counter.innerText = 3000 + Math.floor(perc * 7000);
+    // if(perc >= 1){
+    //   window.scrollTo(1,0);
+    //   document.body.scrollTop = 1;
+    //   document.documentElement.scrollTop = 1;
+    // }
+    // else if(perc <= 0){
+    //   window.scrollTo(max - 1,0);
+    //   document.body.scrollTop = max -1;
+    //   document.documentElement.scrollTop = max-1;
+    // }
+    var count = 3000 + Math.floor(perc * 7000);
+    counter.innerText = count;
+    document.title = 'BRANKO ' + count;
+
   }, max,counter);
 }
 
@@ -102,11 +105,6 @@ function blush(e){
   var blushed = Number(e.getAttribute('data-blushed'));
   e.setAttribute('data-blushed', blushed + 1);
   e.style.color = colors[blushed % colors.length];
-}
-function prepareCanvas(){
-  var canvas = document.getElementById('canvas');
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
 }
 
 function setupCursor(){
