@@ -31,8 +31,15 @@ function activate(element, flag){
 }
 
 function initParticles(){
-  particlesJS.load('particles', 'config/particles.json', function() {
-});
+  if(window.innerWidth < 640){
+    particlesJS.load('particles', 'config/particles-small.json');
+  }
+  else if(window.innerWidth < 1080){
+    particlesJS.load('particles', 'config/particles-medium.json');
+  }
+  else{
+    particlesJS.load('particles', 'config/particles-large.json');
+  }
 }
 // function getEggs(){
 //   var eggMeta = document.head.querySelector("[name~=eggs][content]")
