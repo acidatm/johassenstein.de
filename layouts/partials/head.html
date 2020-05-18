@@ -1,8 +1,7 @@
-<title>BRANKO 3000{{if isset .Params "title"}} - {{.Title | upper}}{{end}}</title>
-<meta name="title" content="{{.Title}}"/>
+<title>{{.Site.Title}}</title>
+<meta name="title" content="{{.Site.Title}}"/>
 <meta name="description" content="{{.Site.Params.description}}"/>
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-<meta name="eggs" content="{{range .Site.Params.eggs}}{{ . }},{{end}}"> 
 <meta http-equiv="Content-Type" content="text/ht	ml;charset=utf-8" />
 {{ $style := resources.Get "css/style.css" | minify | fingerprint }}
 <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}"/>

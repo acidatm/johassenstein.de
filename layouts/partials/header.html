@@ -1,22 +1,13 @@
-<header class='header'>
-    <h1 class='title'><a href='/'>Branko </a><span id='counter'>3000</span></h1>
-    {{if isset .Params "title"}}
-    <h2 class='subtitle'>{{.Title}}</h2>
-    {{else}}
-    <h2 class='subtitle' id='clock'>00:00:00</h2>
+<aside class='newsfeed'>
+  <div id="newsfeed">
+    {{range .Site.Params.news}}
+    <a class='item' href='{{index . 1}}' title='{{index . 0}}' target='_blank'>{{index . 0}}</a>
     {{end}}
-    {{if eq .Params.title "Impressum"}}
-    <a class='link' href='mailto:johannes.hassenstein@pm.me' target='_blank'>Kontakt</a>
-    {{else}}
-    <a class='link' href='/impressum'>Impressum</a>
-    {{end}}
-    <!-- <nav class='menu'>
-      <ul>
-        {{ range .Site.Menus.main }}
-        <li>
-          <a href="{{.URL}}">{{ .Name }}</a>
-        </li>
-        {{end}}
-      </ul>
-    </nav> -->
-</header>
+  </div>
+</aside>
+<!-- <aside class="contact">
+  <a href="mailto:{{.Site.Params.mail}}" title="Contact" target="_blank">
+    <img src="img/contact.gif" alt="e">
+  </a>
+</aside> -->
+<img id="logo" src="img/logo.svg" alt="3000">

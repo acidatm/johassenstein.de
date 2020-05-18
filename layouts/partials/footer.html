@@ -1,5 +1,5 @@
-<footer class='footer'>
-{{ partial "newsfeed.html" . }}
-</footer>
+<div id="particles"></div>
 {{ $scripts := resources.Get  "js/scripts.js" | fingerprint }}
 <script src="{{ $scripts.Permalink }}"></script>
+{{ $particles := resources.Get  "js/particle.js" | fingerprint }}
+<script src="{{ $particles.Permalink }}"></script>

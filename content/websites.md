@@ -1,5 +1,6 @@
 ---
-title: Websites
+title: Webseiten
+weight: 2
 ---
   - [abcfestival.de](https://abcfestival.de)
   - [xyzprojekt.de](https://xyzprojekt.de)

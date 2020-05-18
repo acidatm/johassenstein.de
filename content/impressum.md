@@ -1,6 +1,6 @@
 ---
 title: Impressum
-impressum: true
+weight: 8
 ---
 
 ## Angaben gemäß § 5 TMG

@@ -1,14 +1,39 @@
 window.addEventListener('load',function(){
-  startTimer();
-  var size = [].slice.call(document.getElementById('container').getElementsByTagName('li')).length;
-  addInfiniscroll();
-  spreadList(size);
-  copyBody();
-  initNewsfeed();
-  setLinkHover();
+  initParticles();
   setupCursor();
 });
+window.addEventListener("resize",function(){
+  initParticles();
+})
 
+window.active = false;
+
+function toggleActive(element){
+  if(window.active == element){
+    activate(element,false)
+  }
+  else{
+    activate(element,true)
+  }
+}
+function activate(element, flag){
+  if(flag){
+    if(window.active){
+      activate(window.active,false)
+    }
+    element.classList.add("active");
+    window.active = element;
+  }
+  else{
+    element.classList.remove("active");
+    window.active = false
+  }
+}
+
+function initParticles(){
+  particlesJS.load('particles', 'config/particles.json', function() {
+});
+}
 // function getEggs(){
 //   var eggMeta = document.head.querySelector("[name~=eggs][content]")
 //   var eggs = eggMeta.content.split(',');

@@ -1,4 +1,0 @@
----
----
-- [Websites](/websites)
-- [Projects](/projects)
