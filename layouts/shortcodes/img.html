@@ -1,0 +1,10 @@
+{{ $original := .Page.Resources.GetMatch (printf "*%s*" (.Get 0)) }}
+{{ .Scratch.Set "thumbnail" ($original.Resize "480x Gaussian") }}
+{{ .Scratch.Set "small" ($original.Resize "640x Gaussian") }}
+{{ .Scratch.Set "medium" ($original.Resize "768x Gaussian") }}
+{{ .Scratch.Set "large" ($original.Resize "1080x Gaussian") }}
+{{ $thumbnail := .Scratch.Get "thumbnail" }}
+{{ $s := .Scratch.Get "small" }}
+{{ $m := .Scratch.Get "medium" }}
+{{ $l := .Scratch.Get "large" }}
+<img data-thumbnail="{{ $thumbnail.RelPermalink }}" data-small="{{ $s.RelPermalink }}" data-medium="{{ $m.RelPermalink }}" data-large="{{ $l.RelPermalink }}">

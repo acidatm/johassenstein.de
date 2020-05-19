@@ -4,14 +4,73 @@
 </head>
 <body class='index'>
   <main id="container">
-    {{range .Pages}}
-    <section class="section" onclick="toggleActive(this)" onmouseover="activate(this,true)" onmouseleave="activate(this,false)">
-      <h2 class="title">{{.Title}}</h2>
-      <div class="content">
-        {{.Content}}
+    <section class="section" onmouseover="activate(this,true)" onmouseleave="activate(this,false)">
+        {{ range where .Pages "Title" "About" }}
+        <div class="button"></div>
+        <h2 class="section-title" onclick="toggleActive(this.parentNode)">{{.Title}}</h2>
+        <div class="section-content">
+          <article class="article">
+            <main class="content">
+              <div class="description">{{.Content}}</div>
+            </main>
+          </article>
+        </div>
+        {{end}}
+    </section>
+    {{range $name, $taxonomy := .Site.Taxonomies.type}}
+    <section class="section" onmouseover="activate(this,true)" onmouseleave="activate(this,false)">
+      <div class="button"></div>
+      <h2 class="section-title" onclick="toggleActive(this.parentNode)">{{$name}}</h2>
+      <div class="section-content">
+        {{range .Pages}}
+        <article class="article"{{ with .Content }}onclick="setActive(this)"{{end}}>
+          <h3 class="article-title">
+            {{if isset .Params "link" }}
+            <a href="{{.Params.link}}" title="{{.Title}}" target="_blank">{{.Title}}</a>
+            {{else}}
+            {{.Title}}
+            {{end}}
+          </h3>
+          <main class="content">
+            {{ with .Content }}
+            <div class="button"></div>
+            {{end}}
+            <div class="description">{{.Summary}}</div>
+            <div class="spoiler">{{.Content}}</div>
+          </main>
+        </article>
+        {{end}}
       </div>
     </section>
     {{end}}
+    <section class="section" onmouseover="activate(this,true)" onmouseleave="activate(this,false)">
+      <div class="button"></div>
+      <h2 class="section-title" onclick="toggleActive(this.parentNode)">Contact</h2>
+      <div class="section-content">
+        <article class="article">
+          <ul>
+          {{ range .Site.Menus.contact }}
+            <li>
+              <a href="{{.URL}}">{{ .Name }}</a>
+            </li>
+          {{end}}
+          </ul>
+        </article>
+      </div>
+    </section>
+    <section class="section" onmouseover="activate(this,true)" onmouseleave="activate(this,false)">
+        {{ range where .Pages "Title" "Impressum" }}
+        <div class="button"></div>
+        <h2 class="section-title" onclick="toggleActive(this.parentNode)">{{.Title}}</h2>
+        <div class="section-content">
+          <article class="article">
+            <main class="content">
+              <div class="description">{{.Content}}</div>
+            </main>
+          </article>
+        </div>
+        {{end}}
+    </section>
   </main>
   {{ partial "footer.html" . }}
 </body>

@@ -2,9 +2,11 @@ baseURL = "https://branko3000.de"
 languageCode = "de-de"
 title = "DREITAUSEND"
 defaultContentLanguage = 'de'
-disableKinds = ["section", "taxonomy", "taxonomyTerm", "RSS", "sitemap", "robotsTXT", "404"]
+disableKinds = [ "RSS", "sitemap", "robotsTXT", "404"]
 [blackfriday]
 	hrefTargetBlank = true
+[taxonomies]
+type = "type"
 [params]
 description = 'Ruf mich vor der Arbeit an, ich battle dich in Shorts'
 background = '#ffffff'
@@ -13,3 +15,19 @@ news = [
 ["Check out ABC*-Festival","https://abcfestival.de"],
 ["Ruf mich vor der Arbeit an, ich battle dich in Shorts","/"]
 ]
+[menu]
+  [[menu.contact]]
+     identifier = "mail"
+     name = "johannes.hassenstein[at]pm.me"
+     url = "mailto:johannes.hassenstein@pm.me"
+     weight = 1
+	 [[menu.contact]]
+     identifier = "github"
+     name = "github/branko3000"
+     url = "https://github.com/branko3000"
+     weight = 2
+	 [[menu.contact]]
+	 	identifier = "itch"
+	 	name = "branko3000.itch.io"
+	 	url = "https://branko3000.itch.io"
+	 	weight = 3
