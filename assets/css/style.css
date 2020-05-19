@@ -60,7 +60,7 @@ a{
   overflow: hidden;
   display: flex;
   font-size: 0;
-  border: 0.3rem solid #000000;
+  border: 0.25rem solid #000000;
   z-index: 1;
 }
 #container .section{
@@ -96,7 +96,7 @@ a{
     background: #94958f;
   }
   #container .section:not(:last-of-type){
-    border-bottom: 0.3rem solid #000000;
+    border-bottom: 0.25rem solid #000000;
   }
   #container .section:hover,
   #container .section:active,
@@ -112,7 +112,7 @@ a{
     writing-mode: sideways-lr;
   }
   #container .section:not(:last-of-type){
-    border-right: 0.3rem solid #000000;
+    border-right: 0.25rem solid #000000;
   }
   #container .section:hover,
   #container .section:active,
@@ -132,17 +132,15 @@ a{
 }
 /*CONTENT*/
 .content{
-  width: 100%;
+  width: calc(100% - 2em);
+  padding: 1em;
 }
 .content p{
-  padding: 1em;
+  padding-bottom: 1em;
   word-break: break-all;
 }
 .content li{
   padding-bottom: 1em;
-}
-.content ul{
-  padding: 1em;
 }
 .content h1,
 .content h2,
@@ -167,8 +165,8 @@ a{
 .newsfeed{
   position: fixed;
   width: 80vw;
-  border: 0.3rem solid #000000;
-  left: calc(10vw - 0.3rem);
+  border: 0.25rem solid #000000;
+  left: calc(10vw - 0.25rem);
   bottom: 2rem;
   overflow: hidden;
   background: #94958f;
