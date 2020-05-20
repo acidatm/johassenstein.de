@@ -2,7 +2,7 @@ baseURL = "https://branko3000.de"
 languageCode = "de-de"
 title = "DREITAUSEND"
 defaultContentLanguage = 'de'
-disableKinds = [ "RSS", "sitemap", "robotsTXT", "404"]
+disableKinds = [ "RSS", "sitemap", "robotsTXT"]
 [blackfriday]
 	hrefTargetBlank = true
 [taxonomies]

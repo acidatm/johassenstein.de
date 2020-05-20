@@ -319,27 +319,3 @@ a{
   background-repeat: no-repeat;
   background-size: contain;
 }
-/*CURSOR*/
-/* #cow{
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  height: 25vw;
-  width: 50%;
-  background-image: url(/img/cow_red.gif);
-  background-position: bottom right;
-  background-repeat: no-repeat;
-  z-index: 10;
-  animation: walk 60s infinite linear;
-} */
-@keyframes walk {
-  0%{
-    transform: translateX(0);
-  }
-  80%{
-    transform: translateX(-100vw);
-  }
-  100%{
-    transform: translateX(-125vw);
-  }
-}
