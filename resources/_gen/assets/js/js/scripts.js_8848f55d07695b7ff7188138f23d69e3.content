@@ -8,41 +8,50 @@ window.addEventListener("resize",function(){
 
 window.active = false;
 window.article = false;
+window.preserve = false;
 
-function setActive(element){
-  if(window.article == element){
-    element.classList.remove("active");
-    window.article = false;
-  }
-  else{
-    if(window.article){
-      window.article.classList.remove("active");
+function setActive(element,force){
+  if(force || !window.preserve){
+    if(window.article == element){
+      element.classList.remove("active");
+      window.article = false;
     }
-    preload(element)
-    element.classList.add("active");
-    element.parentNode.scrollTop = element.offsetTop;
-    window.article = element;
+    else{
+      if(window.article){
+        window.article.classList.remove("active");
+      }
+      preload(element)
+      element.classList.add("active");
+      setTimeout(function () {
+        element.parentNode.scrollTop = element.offsetTop;
+      }, 10,element);
+      window.article = element;
+    }
   }
 }
 function toggleActive(element){
-  if(window.active == element){
-    activate(element,false)
-  }
-  else{
-    activate(element,true)
+  if(!window.preserve){
+    if(window.active == element){
+      activate(element,false)
+    }
+    else{
+      activate(element,true)
+    }
   }
 }
-function activate(element, flag){
-  if(flag){
-    if(window.active){
-      activate(window.active,false)
+function activate(element, flag, force){
+  if(force || !window.preserve){
+    if(flag){
+      if(window.active){
+        activate(window.active,false,force)
+      }
+      element.classList.add("active");
+      window.active = element;
     }
-    element.classList.add("active");
-    window.active = element;
-  }
-  else{
-    element.classList.remove("active");
-    window.active = false
+    else{
+      element.classList.remove("active");
+      window.active = false
+    }
   }
 }
 
@@ -71,7 +80,6 @@ function setupCursor(){
 
 function preload(element){
   if(!element.classList.contains("loaded")){
-    console.log("p");
     var res = "thumbnail";
     if(window.innerWidth > 768){
       res = "large"
@@ -86,8 +94,22 @@ function preload(element){
     for(var img in images){
       img = images[img]
       img.src = img.getAttribute("data-" + res)
-      console.log(img);
     }
     element.classList.add("loaded")
   }
+}
+
+function openLightbox(element){
+  window.preserve = true;
+  var lightbox = document.getElementById("lightbox");
+  lightbox.style.backgroundImage = "url(" + element.getAttribute("data-full") + ")";
+  lightbox.classList.add("open");
+}
+function closeLightbox(){
+  var lightbox = document.getElementById("lightbox");
+  lightbox.style.backgroundImage = "none";
+  lightbox.classList.remove("open");
+  setTimeout(function () {
+    window.preserve = false;
+  }, 500);
 }

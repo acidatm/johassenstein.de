@@ -2,7 +2,7 @@
 title: Das Streichholz
 type: written
 weight: 2
-summary: A piece about the sense of life in a vacuum and the human society.
+summary: A play about the sense of life in a vacuum.
 ---
 {{< img cover >}}
 
