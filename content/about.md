@@ -10,3 +10,5 @@ In 2018 2 friends and me founded the [ABC*-Festival](https://abcfestival.de). It
 I am a volunteer inspirer at [Hacker Schools](https://hacker-school.de/), an alternative education program.
 
 The [XYZ*-Projekt](https://xyzfestival.de) is an event format with access to knowledge and excess to music as it's main goal. It was founded as an outlet of ABC*-Festival in 2019.
+
+I work with free and open source tools only ([GIMP](https://www.gimp.org/), [Inkscape](https://inkscape.org/), [Godot](https://godotengine.org/), [Typora](https://typora.io/), [Scribus](https://www.scribus.net/), [Atom](https://atom.io/), [LibreOffice](https://www.libreoffice.org/) suite and [KeePassX](https://www.keepassx.org/)) on a Linux laptop. All websites and web-based projects are static websites, mostly build with [HUGO](https://gohugo.io/) and hosted either with [Netlify](https://www.netlify.com/) or [Surge](https://surge.sh/).
