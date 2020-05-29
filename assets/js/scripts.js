@@ -102,13 +102,15 @@ function preload(element){
 function openLightbox(element){
   window.preserve = true;
   var lightbox = document.getElementById("lightbox");
+  var container = document.getElementById("lightbox-container");
   lightbox.style.backgroundImage = "url(" + element.getAttribute("data-full") + ")";
-  lightbox.classList.add("open");
+  container.classList.add("open");
 }
 function closeLightbox(){
   var lightbox = document.getElementById("lightbox");
+  var container = document.getElementById("lightbox-container");
   lightbox.style.backgroundImage = "none";
-  lightbox.classList.remove("open");
+  container.classList.remove("open");
   setTimeout(function () {
     window.preserve = false;
   }, 500);
