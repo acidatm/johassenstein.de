@@ -1,6 +1,7 @@
 window.addEventListener('load',function(){
   initParticles();
-  setupCursor();
+  initCounterTitle();
+  // setupCursor();
 });
 window.addEventListener("resize",function(){
   initParticles();
@@ -10,6 +11,18 @@ window.active = false;
 window.article = false;
 window.preserve = false;
 
+function initCounterTitle(){
+  setTitle();
+  document.addEventListener("click",function(){
+    document.title = "0000"
+  })
+}
+function setTitle(){
+  document.title = ("000" + (Number(document.title) + 1) % 3001).slice(-4)
+  setTimeout(function () {
+    setTitle()
+  }, 10);
+}
 function setActive(element,force){
   if(force || !window.preserve){
     if(window.article == element){
@@ -56,15 +69,16 @@ function activate(element, flag, force){
 }
 
 function initParticles(){
-  if(window.innerWidth < 640){
-    particlesJS.load('particles', 'config/particles-small.json');
-  }
-  else if(window.innerWidth < 1080){
-    particlesJS.load('particles', 'config/particles-medium.json');
-  }
-  else{
-    particlesJS.load('particles', 'config/particles-large.json');
-  }
+  // if(window.innerWidth < 640){
+  //   particlesJS.load('particles', 'config/particles-small.json');
+  // }
+  // else if(window.innerWidth < 1080){
+  //   particlesJS.load('particles', 'config/particles-medium.json');
+  // }
+  // else{
+  //   particlesJS.load('particles', 'config/particles-large.json');
+  // }
+  particlesJS.load('particles', 'config/particles.json');
 }
 
 function setupCursor(){

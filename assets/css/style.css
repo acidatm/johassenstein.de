@@ -4,12 +4,38 @@
   font-style: normal;
   font-weight: 900;
   src: url('../fonts/roboto-v20-latin-900.eot'); /* IE9 Compat Modes */
-  src: local('Roboto #94958f'), local('Roboto-#94958f'),
+  src: local('Roboto #0a0a0b'), local('Roboto-#0a0a0b'),
        url('../fonts/roboto-v20-latin-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('../fonts/roboto-v20-latin-900.woff2') format('woff2'), /* Super Modern Browsers */
        url('../fonts/roboto-v20-latin-900.woff') format('woff'), /* Modern Browsers */
        url('../fonts/roboto-v20-latin-900.ttf') format('truetype'), /* Safari, Android, iOS */
        url('../fonts/roboto-v20-latin-900.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+/* roboto-900 - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/roboto-v20-latin-700.eot'); /* IE9 Compat Modes */
+  src: local('Roboto bold'), local('Roboto-bold'),
+       url('../fonts/roboto-v20-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/roboto-v20-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/roboto-v20-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/roboto-v20-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/roboto-v20-latin-700.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+/* roboto-900 - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/roboto-v20-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Roboto regular'), local('Roboto-regular'),
+       url('../fonts/roboto-v20-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/roboto-v20-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/roboto-v20-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/roboto-v20-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/roboto-v20-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
 }
 /* playfair-display-regular - latin */
 @font-face {
@@ -54,24 +80,25 @@
 html,body{
   margin: 0;
   padding: 0;
-  cursor: url(/img/cow-click.png), auto;
+  cursor: auto;
 }
 body{
-  color: #000000;
-  background: #94958f;
+  color: #eee;
+  background: #0a0a0b;
   font-family: 'Roboto', sans-serif;
   overflow: hidden;
   height: 100vh;
   width: 100vw;
-  background-image: url(/img/logo.svg);
+  /* background-image: url(https://media.giphy.com/media/9kTcnWJdDBF1S/source.gif);
   background-position: center;
-  background-repeat: repeat-y;
-  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: luminosity; */
 }
 *{
-  font-size: calc(calc(calc(2vh + 1vw) * 0.5) * 2);
-  font-weight: 900;
-  line-height: 1.2em;
+  font-size: calc(calc(calc(2vh + 1vw) * 0.5) * 1.2);
+  font-weight: 400;
+  line-height: 1.5em;
   color: inherit;
   text-decoration: none;
   list-style: none;
@@ -81,16 +108,20 @@ body{
 h1,h2,h3,h4,h5,h6{
   line-height: 1em;
   word-break: break-all;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
+  font-weight: 400;
 }
 a{
-  color: #ff0000 !important;
-  cursor: url(/img/cow.png), pointer;
-  word-break: break-all;
+  /* color: #ff0000 !important; */
+  /* cursor: url(/img/cow.png), pointer; */
+  /* word-break: break-all; */
+  /* text-decoration: underline; */
+  border-bottom: 0.1rem solid #eee;
+  cursor: pointer;
 }
 ::selection,::-moz-selection{
-  background: #94958f;
-  color: #000000;
+  background: #0a0a0b;
+  color: #eee;
 }
 #particles{
   position: fixed;
@@ -124,7 +155,7 @@ a{
   overflow: hidden;
   display: flex;
   font-size: 0;
-  border: 0.25rem solid #000000;
+  border: 0.1rem solid #eee;
   z-index: 1;
 }
 #container .section{
@@ -141,7 +172,7 @@ a{
 #container .section.active{
   flex: none;
   overflow-y: auto;
-  background: #94958f;
+  background: #0a0a0b;
 }
 #container .section .section-content{
   display: none;
@@ -165,12 +196,13 @@ a{
   left: 0;
   padding: 1em;
   z-index: 2;
+  text-transform: lowercase;
 }
 #container .section:hover .section-title,
 #container .section:active .section-title,
 #container .section.active .section-title{
-  border-bottom: 0.25rem solid #000000;
-  background: #94958f;
+  border-bottom: 0.1rem solid #eee;
+  background: #0a0a0b;
   width: calc(100% - 2em);
 }
 #container .section .article{
@@ -178,13 +210,13 @@ a{
   position: relative;
 }
 #container .section .article:not(:last-of-type){
-  border-bottom: 0.25rem solid #000000;
+  border-bottom: 0.1rem solid #eee;
 }
 #container .section .article .article-title{
   padding: 1em;
   padding-bottom: 0;
   width: calc(100% - 4em);
-  font-family: 'Playfair Display', serif;
+  /* font-family: 'Playfair Display', serif; */
 }
 #container .button{
   position: absolute;
@@ -222,25 +254,25 @@ a{
   display: inline-block;
 }
 @media (orientation: portrait){
-  body{
+  /* body{
     background-image: url(/img/logo-mobile.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-  }
+  } */
   /* #particles{
     display: none;
   } */
   #container{
     flex-direction: column;
-    width: calc(100vw - 0.5rem);
-    height: calc(100vh - 0.5rem);
+    width: calc(95vw - 0.5rem);
+    height: calc(95vh - 0.5rem);
   }
   #container .section{
-    /* background: #94958f; */
+    /* background: #0a0a0b; */
   }
   #container .section:not(:last-of-type){
-    border-bottom: 0.25rem solid #000000;
+    border-bottom: 0.1rem solid #eee;
   }
   #container .section .section-title,
   #container .section .section-title,
@@ -264,7 +296,7 @@ a{
     writing-mode: sideways-lr;
   }
   #container .section:not(:last-of-type){
-    border-right: 0.25rem solid #000000;
+    border-right: 0.1rem solid #eee;
   }
   #container .section:hover,
   #container .section:active,
@@ -289,7 +321,7 @@ a{
 }
 #container .section .article img{
   width: 100%;
-  cursor: url(/img/cow.png), zoom-in;
+  cursor: zoom-in;
 }
 #container .section .article img ~ p{
   padding-top: 1em;
@@ -308,7 +340,7 @@ a{
 #container .section .article .content h5,
 #container .section .article .content h6{
   padding: 1em;
-  font-family: 'Playfair Display', serif;
+  /* font-family: 'Playfair Display', serif; */
 }
 #lightbox-container{
   position: fixed;
@@ -316,10 +348,10 @@ a{
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #94958f;
+  background-color: #0a0a0b;
   transition: all 0.2s ease-out;
   z-index: 2;
-  cursor: url(/img/cow.png), zoom-out;
+  cursor: zoom-out;
 }
 #lightbox{
   width: 90%;
