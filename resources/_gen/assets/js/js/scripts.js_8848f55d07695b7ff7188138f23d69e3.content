@@ -1,6 +1,7 @@
 window.addEventListener('load',function(){
   initParticles();
-  initCounterTitle();
+  initClock();
+  //initCounterTitle();
   // setupCursor();
 });
 window.addEventListener("resize",function(){
@@ -10,6 +11,21 @@ window.addEventListener("resize",function(){
 window.active = false;
 window.article = false;
 window.preserve = false;
+
+function initClock(){
+  let date = new Date()
+  let hours = ('0'+ date.getHours()).slice(-2)
+  let minutes = ('0'+ date.getMinutes()).slice(-2)
+  let seconds = ('0'+ date.getSeconds()).slice(-2)
+  document.title = hours + ':' + minutes + ':' + seconds
+  setInterval(function () {
+    let date = new Date()
+    let hours = ('0'+ date.getHours()).slice(-2)
+    let minutes = ('0'+ date.getMinutes()).slice(-2)
+    let seconds = ('0'+ date.getSeconds()).slice(-2)
+    document.title = hours + ':' + minutes + ':' + seconds
+  }, 1000);
+}
 
 function initCounterTitle(){
   setTitle();

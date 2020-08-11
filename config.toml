@@ -1,6 +1,6 @@
-baseURL = "https://branko3000.de"
+baseURL = "https://johassenstein.de"
 languageCode = "de-de"
-title = "3000"
+title = "Johannes"
 defaultContentLanguage = 'de'
 disableKinds = [ "RSS", "sitemap", "robotsTXT"]
 timeout = 60000

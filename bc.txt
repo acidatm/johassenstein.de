@@ -1,1 +1,0 @@
-style='background: {{if isset .Params "background"}}{{.Params.background}}{{else}}{{.Site.Params.background}}{{end}}; color: {{if isset .Params "color"}}{{.Params.color}}{{else}}{{.Site.Params.color}}{{end}}'
