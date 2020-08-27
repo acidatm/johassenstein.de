@@ -1,7 +1,7 @@
 ---
 title: Anke Lietzke
 link: https://anke-lietzke.de
-type: websites
+type: software
 weight: 6
 summary: Anke Lietzke is an interior architect. Her website is minimal and presents her and her work as clean and straightforward.
 ---
