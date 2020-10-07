@@ -23,12 +23,22 @@ news = [
      url = "mailto:johannes.hassenstein@pm.me"
      weight = 1
 	 [[menu.contact]]
+     identifier = "instagram"
+     name = "instagram/acidatm"
+     url = "https://instagram.com/acidatm"
+     weight = 2
+	 [[menu.contact]]
+	 	identifier = "soundcloud"
+	 	name = "soundcloud/acidatm"
+	 	url = "https://soundcloud.com/acidatm"
+	 	weight = 3
+	 [[menu.contact]]
      identifier = "github"
      name = "github/branko3000"
      url = "https://github.com/branko3000"
-     weight = 2
+     weight = 4
 	 [[menu.contact]]
 	 	identifier = "itch"
 	 	name = "branko3000.itch.io"
 	 	url = "https://branko3000.itch.io"
-	 	weight = 3
+	 	weight = 5

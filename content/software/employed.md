@@ -2,5 +2,6 @@
 title: I worked for
 type: software
 weight: 100
-summary: Camel, Volvo and Evonik as part of an agency
+summary: companys like
 ---
+Evonik, Zellerfeld, Coop and Takeda as part of an agency.
