@@ -314,11 +314,11 @@ a{
     writing-mode: lr;
   }
 }
-@media (orientation: portrait) or (max-width: 768px){
+/* @media (orientation: portrait) or (max-width: 768px){
   #ufo{
     display: none;
   }
-}
+} */
 /*CONTENT*/
 #container .section .article p{
   padding: 1em;

@@ -61,7 +61,7 @@ function setActive(element,force){
 }
 function toggleActive(element){
   if(!window.preserve){
-    if(window.active == element){
+    if(window.active === element){
       activate(element,false)
     }
     else{
@@ -70,6 +70,9 @@ function toggleActive(element){
   }
 }
 function activate(element, flag, force){
+  if(!force){
+    force = false
+  }
   if(force || !window.preserve){
     if(flag){
       if(window.active){
