@@ -2,7 +2,7 @@ window.addEventListener('load',function(){
   initParticles();
   initClock();
   //initCounterTitle();
-  // setupCursor();
+  setupCursor();
 });
 window.addEventListener("resize",function(){
   initParticles();
@@ -49,12 +49,13 @@ function setActive(element,force){
       if(window.article){
         window.article.classList.remove("active");
       }
+      window.article = element;
       preload(element)
       element.classList.add("active");
       setTimeout(function () {
         element.parentNode.scrollTop = element.offsetTop;
       }, 10,element);
-      window.article = element;
+
     }
   }
 }
@@ -144,4 +145,10 @@ function closeLightbox(){
   setTimeout(function () {
     window.preserve = false;
   }, 500);
+}
+function cancelBubble(e){
+
+    e.cancelBubble = true;
+    if(e.stopPropagation)
+     e.stopPropagation();
 }

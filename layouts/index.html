@@ -18,12 +18,12 @@
         {{end}}
     </section>
     {{range $name, $taxonomy := .Site.Taxonomies.type}}
-    <section class="section" onmouseover="activate(this,true)" onmouseleave="activate(this,false)">
+    <section class="section" onmouseover="activate(this,true)" onmouseleave="activate(this,false)" onclick="toggleActive(this);cancelBubble(event)">
       <div class="button"></div>
-      <h2 class="section-title" onclick="toggleActive(this.parentNode)">{{$name}}</h2>
+      <h2 class="section-title" >{{$name}}</h2>
       <div class="section-content">
         {{range .Pages}}
-        <article class="article"{{ with .Content }}onclick="setActive(this)"{{end}}>
+        <article class="article"{{ with .Content }}onclick="setActive(this);cancelBubble(event)"{{end}}>
           <h3 class="article-title">
             {{if isset .Params "link" }}
             <a href="{{.Params.link}}" title="{{.Title}}" target="_blank">{{.Title}}</a>
@@ -43,9 +43,9 @@
       </div>
     </section>
     {{end}}
-    <section class="section" onmouseover="activate(this,true)" onmouseleave="activate(this,false)">
+    <section class="section" onmouseover="activate(this,true)" onmouseleave="activate(this,false)" onclick="toggleActive(this);cancelBubble(event)">
       <div class="button"></div>
-      <h2 class="section-title" onclick="toggleActive(this.parentNode)">Contact</h2>
+      <h2 class="section-title">Contact</h2>
       <div class="section-content">
         <article class="article">
           <ul>
@@ -58,10 +58,10 @@
         </article>
       </div>
     </section>
-    <section class="section" onmouseover="activate(this,true)" onmouseleave="activate(this,false)">
+    <section class="section" onmouseover="activate(this,true)" onmouseleave="activate(this,false)" onclick="toggleActive(this);cancelBubble(event)">
         {{ range where .Pages "Title" "Impressum" }}
         <div class="button"></div>
-        <h2 class="section-title" onclick="toggleActive(this.parentNode)">{{.Title}}</h2>
+        <h2 class="section-title">{{.Title}}</h2>
         <div class="section-content">
           <article class="article">
             <main class="content">

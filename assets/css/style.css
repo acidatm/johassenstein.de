@@ -80,7 +80,7 @@
 html,body{
   margin: 0;
   padding: 0;
-  cursor: auto;
+  cursor: url(/img/cow-white.png), auto;
 }
 body{
   color: white;
@@ -122,7 +122,7 @@ a{
   /* word-break: break-all; */
   /* text-decoration: underline; */
   border-bottom: 0.1rem solid white;
-  cursor: pointer;
+  cursor: url(/img/cow-white.png), pointer;
 }
 ::selection,::-moz-selection{
   background: black;
@@ -139,7 +139,7 @@ a{
 }
 #ufo{
   position: fixed;
-  background: url('/img/ufo.png');
+  background: url('/img/ufo-light.png');
   width: 50px;
   height: 24px;
   background-repeat: no-repeat;
@@ -155,8 +155,8 @@ a{
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  width: 80vw;
-  height: 80vh;
+  width: 80%;
+  height: 80%;
   overflow: hidden;
   display: flex;
   font-size: 0;
@@ -270,8 +270,8 @@ a{
   } */
   #container{
     flex-direction: column;
-    width: calc(95vw - 0.2rem);
-    height: calc(95vh - 0.2rem);
+    width: calc(95% - 0.2rem);
+    height: calc(95% - 0.2rem);
   }
   #container .section{
     /* background: black; */
@@ -326,7 +326,11 @@ a{
 }
 #container .section .article img{
   width: 100%;
-  cursor: zoom-in;
+  cursor: url(/img/cow-white.png), zoom-in;
+}
+#container .section .article p img{
+  width: calc(100% + 2em);
+  margin-left: -1em;
 }
 #container .section .article img ~ p{
   padding-top: 1em;
@@ -356,7 +360,7 @@ a{
   background-color: black;
   transition: all 0.2s ease-out;
   z-index: 2;
-  cursor: zoom-out;
+  cursor: url(/img/cow-white.png),zoom-out;
 }
 #lightbox{
   width: 90%;
