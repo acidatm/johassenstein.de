@@ -14,7 +14,7 @@ window.addEventListener('load', function(){
     document.body.removeChild(credit);
   }
   else{
-    credit.outerHTML = '<a id="credit" href="https://branko3000.de" target="_blank" style="z-index: 1000000; position: fixed; bottom: 0; left: 0; font-size:12px; font-family:serif;line-height: 12px; color: #ff0000; background: #94958f; padding: 1px; text-decoration: none;">DREITAUSEND</a>';
+    credit.outerHTML = '<a id="credit" href="https://branko3000.de" target="_blank" style="z-index: 1000000; position: fixed; bottom: 0; left: 0; font-size:12px; font-weight: bold; font-family:sans-serif;line-height: 12px; color: #ffffff; background: #000000; padding: 4px; text-decoration: none;">3000</a>';
   }
   console.log("This website is created by Branko3000. Check him out: https://branko3000.de");
   var c = document.createComment("This website is created by Branko3000. Check him out: https://branko3000.de");
