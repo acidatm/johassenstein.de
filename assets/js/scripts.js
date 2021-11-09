@@ -39,7 +39,6 @@ function initImages(){
       document.body.classList.remove("image-full")
       document.body.classList.add("image-active")
       window.image = i
-      console.log(window.image);
     }
     img.style.backgroundImage = "url(" + bg + ")"
     img.addEventListener("mousedown",set)
@@ -48,7 +47,6 @@ function initImages(){
   window.addEventListener("mousemove",function(e){
     e.preventDefault()
     let {clientX,clientY} = e
-    console.log(cursor);
     cursor.style.top = clientY + "px"
     cursor.style.left = clientX + "px"
     let x = clientX / window.innerWidth
@@ -88,7 +86,7 @@ function initClock(){
   }, 1000);
 }
 function setupCursor(){
-  if(!isTouchEnabled())
+  if(!isTouchEnabled()){
     window.cursor = document.createElement('div');
     cursor.id = 'ufo';
     document.body.appendChild(cursor)
