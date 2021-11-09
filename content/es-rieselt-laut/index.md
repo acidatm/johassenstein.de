@@ -1,6 +1,6 @@
 ---
 title: Es rieselt laut
-tag: img
+types: img
 date: 2018-12-24
 ---
 {{< img EsRieseltLaut-1>}}

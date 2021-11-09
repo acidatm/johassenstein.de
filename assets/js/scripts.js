@@ -88,7 +88,14 @@ function initClock(){
   }, 1000);
 }
 function setupCursor(){
-  window.cursor = document.createElement('div');
-  cursor.id = 'ufo';
-  document.body.appendChild(cursor)
+  if(!isTouchEnabled())
+    window.cursor = document.createElement('div');
+    cursor.id = 'ufo';
+    document.body.appendChild(cursor)
+  }
+}
+function isTouchEnabled() {
+    return ( 'ontouchstart' in window ) ||
+           ( navigator.maxTouchPoints > 0 ) ||
+           ( navigator.msMaxTouchPoints > 0 );
 }

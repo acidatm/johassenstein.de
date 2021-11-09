@@ -1,7 +1,7 @@
 ---
 title: Deutsches Schauspielhaus Hamburg
 date: 2021-11-01
-tag: cv
+types: cv
 ---
 <!--more-->
 Backstage, Schreibwerkstatt

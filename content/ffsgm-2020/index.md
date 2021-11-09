@@ -1,7 +1,7 @@
 ---
 title: Festival für selbstgebaute Musik
 date: 2020-09-12
-tag: mp3
+types: mp3
 link: https://soundcloud.com/acidatm/deobsoleszenziator-3
 ---
 {{< img ffsgm-4>}}

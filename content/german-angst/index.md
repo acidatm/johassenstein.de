@@ -1,7 +1,7 @@
 ---
 title: German Angst
 date: 2021-09-05
-tag: mp3
+types: mp3
 link: https://acidatm.de/germanangst/
 ---
 {{< img german-angst>}}

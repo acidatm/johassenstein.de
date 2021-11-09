@@ -1,7 +1,7 @@
 ---
 title: Studium
 date: 2021-10-01
-tag: cv
+types: cv
 ---
 <!--more-->
 Hochschule für bildende Künste Hamburg, Bildende Kunst

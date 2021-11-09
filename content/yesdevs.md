@@ -1,7 +1,7 @@
 ---
 title: yes!devs GmbH
 date: 2019-12-01
-tag: cv
+types: cv
 ---
 <!--more-->
 Festanstellung als Softwareentwickler

@@ -1,7 +1,7 @@
 ---
 title: Tram21
 link: https://branko3000.github.io/tram21/
-tag: exe
+types: exe
 date: 2019-01-01
 ---
 {{<img preview-1>}}

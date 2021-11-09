@@ -1,6 +1,6 @@
 ---
 title: Tanzen ist Posen
-tag: img
+types: img
 date: 2017-06-01
 ---
 {{< img TanzenIstPosen-1>}}

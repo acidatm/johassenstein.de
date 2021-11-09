@@ -1,7 +1,7 @@
 ---
 title: ABC*-Festival
 date: 2019-02-01
-tag: cv
+types: cv
 link: https://abcfestival.de
 ---
 {{< img abc-1>}}

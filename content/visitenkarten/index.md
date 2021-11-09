@@ -1,7 +1,7 @@
 ---
 title: Visitenkarten
 date: 2019-01-01
-tag: img
+types: img
 ---
 {{< img card-1>}}
 

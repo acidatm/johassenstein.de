@@ -1,7 +1,7 @@
 ---
 title: Ralf Ziervogel
 date: 2021-06-01
-tag: exe
+types: exe
 link: https://ralfziervogel.com
 ---
 {{< img razivo-0>}}

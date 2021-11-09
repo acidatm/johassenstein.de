@@ -1,7 +1,7 @@
 ---
 title: Zeitgeist
 link: https://www.instagram.com/p/CJluKoMBgzV/
-tag: mp3
+types: mp3
 date: 2020-10-05
 ---
 {{<img zeitgeist-1>}}

@@ -32,6 +32,7 @@ body{
   height: 100vh;
   overflow: hidden;
   overflow-y: auto;
+  user-select: none;
 }
 html{
   font-size: 2vh;
@@ -158,9 +159,6 @@ body.image-active{
 .data-1 .image{
   display: inline-block;
   border: 0.1rem solid black;
-}
-.data-link span{
-  border-bottom: 0.1rem solid white;
 }
 #ufo{
   position: fixed;

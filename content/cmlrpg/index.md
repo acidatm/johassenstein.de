@@ -1,7 +1,7 @@
 ---
 title: CMLRPG
 link: https://github.com/branko3000/cmlrpg
-tag: exe
+types: exe
 date: 2020-02-01
 ---
 {{< img screenshot-1 >}}

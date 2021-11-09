@@ -1,7 +1,7 @@
 ---
 title: ACID
 link: https://acidatm.itch.io/acid
-tag: exe
+types: exe
 date: 2021-02-21
 ---
 {{<img acid-1>}}

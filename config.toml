@@ -7,7 +7,7 @@ timeout = 60000
 [blackfriday]
 	hrefTargetBlank = true
 [taxonomies]
-type = "type"
+type = "types"
 [params]
 description = 'Ruf mich vor der Arbeit an, ich battle dich in Shorts'
 background = '#ffffff'

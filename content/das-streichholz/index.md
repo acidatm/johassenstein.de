@@ -1,6 +1,6 @@
 ---
 title: Das Streichholz
-tag: txt
+types: txt
 link: /pdfs/das_streichholz.pdf
 date: 2019-06-12
 ---

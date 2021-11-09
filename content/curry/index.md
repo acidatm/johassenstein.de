@@ -1,6 +1,6 @@
 ---
 title: Curry
-tag: img
+types: img
 date: 2017-09-22
 ---
 {{< img Curry-01>}}
