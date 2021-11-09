@@ -1,5 +1,5 @@
 {{ $original := .Page.Resources.GetMatch (printf "*%s*" (.Get 0)) }}
-{{ .Scratch.Set "thumbnail" ($original.Resize "480x Gaussian") }}
+{{ .Scratch.Set "thumbnail" ($original.Fill "32x32 Linear") }}
 {{ .Scratch.Set "small" ($original.Resize "640x Gaussian") }}
 {{ .Scratch.Set "medium" ($original.Resize "768x Gaussian") }}
 {{ .Scratch.Set "large" ($original.Resize "1080x Gaussian") }}
@@ -9,4 +9,4 @@
 {{ $m := .Scratch.Get "medium" }}
 {{ $l := .Scratch.Get "large" }}
 {{ $f := .Scratch.Get "full" }}
-<img onclick="openLightbox(this)" data-thumbnail="{{ $thumbnail.Permalink }}" data-small="{{ $s.Permalink }}" data-medium="{{ $m.Permalink }}" data-large="{{ $l.Permalink }}" data-full="{{ $f.Permalink }}">
+<span class="image" data-thumbnail="{{$thumbnail.Permalink}}" data-small="{{ $s.Permalink }}" data-medium="{{ $m.Permalink }}" data-large="{{ $l.Permalink }}" data-full="{{ $f.Permalink }}"></span>

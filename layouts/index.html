@@ -1,77 +1,67 @@
-<html>
-<head>
-  {{ partial "head.html" . }}
-</head>
-<body class='index'>
-  <main id="container">
-    <section class="section" onmouseover="activate(this,true)" onmouseleave="activate(this,false)">
-        {{ range where .Pages "Title" "About" }}
-        <div class="button"></div>
-        <h2 class="section-title" onclick="toggleActive(this.parentNode)">{{.Title}}</h2>
-        <div class="section-content">
-          <article class="article">
-            <main class="content">
-              <div class="description">{{.Content}}</div>
-            </main>
-          </article>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body class="list">
+    <div class="header">
+      <div class="row">
+        <div class="data data-1">
+
         </div>
-        {{end}}
-    </section>
-    {{range $name, $taxonomy := .Site.Taxonomies.type}}
-    <section class="section" onmouseover="activate(this,true)" onmouseleave="activate(this,false)" onclick="toggleActive(this);cancelBubble(event)">
-      <div class="button"></div>
-      <h2 class="section-title" >{{$name}}</h2>
-      <div class="section-content">
-        {{range .Pages}}
-        <article class="article"{{ with .Content }}onclick="setActive(this);cancelBubble(event)"{{end}}>
-          <h3 class="article-title">
-            {{if isset .Params "link" }}
-            <a href="{{.Params.link}}" title="{{.Title}}" target="_blank">{{.Title}}</a>
-            {{else}}
-            {{.Title}}
-            {{end}}
-          </h3>
-          <main class="content">
-            {{ with .Content }}
-            <div class="button"></div>
-            {{end}}
-            <div class="description">{{.Summary}}</div>
-            <div class="spoiler">{{.Content}}</div>
-          </main>
-        </article>
-        {{end}}
+        <div class="data data-2">
+          Date
+        </div>
+        <div class="data data-3">
+          Tag
+        </div>
+        <div class="data data-4">
+          
+        </div>
       </div>
-    </section>
-    {{end}}
-    <section class="section" onmouseover="activate(this,true)" onmouseleave="activate(this,false)" onclick="toggleActive(this);cancelBubble(event)">
-      <div class="button"></div>
-      <h2 class="section-title">Contact</h2>
-      <div class="section-content">
-        <article class="article">
+    </div>
+    <div class="table">
+      {{ range .Pages }}
+      {{ partial "item.html" . }}
+      {{end}}
+    </div>
+    <div class="footer">
+      <div class="row">
+        <div class="data data-1">
           <ul>
-          {{ range .Site.Menus.contact }}
             <li>
-              <a href="{{.URL}}">{{ .Name }}</a>
+              <a href="https://instagram.com/acidatm" target="_blank"><img src="/img/icons/4.png" alt="Instagram"></a>
             </li>
-          {{end}}
+            <li>
+              <a href="https://github.com/acidatm" target="_blank"><img src="/img/icons/3.png" alt="Github"></a>
+            </li>
+            <li>
+              <a href="https://acidatm.itch.io/" target="_blank"><img src="/img/icons/2.png" alt="itch.io"></a>
+            </li>
+            <li>
+              <a href="https://soundcloud.com/acidatm" target="_blank"><img src="/img/icons/1.png" alt="Soundcloud"></a>
+            </li>
+            <li>
+              <a href="https://acidatm.bandcamp.com" target="_blank"><img src="/img/icons/5.png" alt="Bandcamp"></a>
+            </li>
+            <li>
+              <a href="https://open.spotify.com/artist/2mYH24BGh8rLGKI8FaHess?si=2VpLOQk8SMOJJUcI83mEsg" target="_blank"><img src="/img/icons/0.png" alt="Spotify"></a>
+            </li>
           </ul>
-        </article>
-      </div>
-    </section>
-    <section class="section" onmouseover="activate(this,true)" onmouseleave="activate(this,false)" onclick="toggleActive(this);cancelBubble(event)">
-        {{ range where .Pages "Title" "Impressum" }}
-        <div class="button"></div>
-        <h2 class="section-title">{{.Title}}</h2>
-        <div class="section-content">
-          <article class="article">
-            <main class="content">
-              <div class="description">{{.Content}}</div>
-            </main>
-          </article>
         </div>
-        {{end}}
-    </section>
-  </main>
-  {{ partial "footer.html" . }}
-</body>
+        <div class="data data-2">
+
+        </div>
+        <div class="data data-3">
+
+        </div>
+        <div class="data data-4">
+          <a href="/impressum">Impressum</a>
+        </div>
+      </div>
+    </div>
+    <footer>
+    </footer>
+    {{ partial "footer.html" . }}
+  </body>
 </html>

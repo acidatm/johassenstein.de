@@ -1,0 +1,37 @@
+
+<div class="row">
+  <div class="data data-1">
+    {{.Summary}}
+  </div>
+  {{ if (isset .Params "unspecificdate") }}
+  <div class="data data-2">
+    {{ dateFormat "2006" .Date }}
+  </div>
+  {{else}}
+  <div class="data data-2 data-no-hover">
+    {{ dateFormat "2006" .Date }}
+  </div>
+  <div class="data data-2 data-hover">
+    {{ dateFormat "2006" .Date }}
+  </div>
+  {{end}}
+  <div class="data data-3">
+    {{ if (isset .Params "tag") }}{{.Param "tag"}}{{end}}
+  </div>
+  {{ if (isset .Params "link") }}
+  <a class="data data-4 data-link"href='{{.Param "link" }}' target="_blank" title="{{.Title}}">
+  {{else}}
+  <div class="data data-4">
+  {{end}}
+    <span class="data-no-hover">
+      {{ if (isset .Params "title") }}{{.Param "title"}}{{end}}
+    </span>
+    <span class="data-hover">
+      {{.Content}}
+    </span>
+  {{ if (isset .Params "link") }}
+  </a>
+  {{else}}
+  </div>
+  {{end}}
+</div>
