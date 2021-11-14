@@ -21,10 +21,9 @@ function initImages(){
       1440: img.getAttribute("data-full")
     }
     let wset = Object.keys(srcset).sort((a, b) => a - b)
-    let set = function(e){
-      let {clientX,clientY} = e
-      let x = clientX / window.innerWidth
-      let y = clientY / window.innerHeight
+    let set = function(x,y){
+      x = x / window.innerWidth
+      y = y / window.innerHeight
       document.body.style.backgroundPosition = x * 100 + "% " + y * 100 + "%"
       let src = false
       for(let w in wset){
@@ -41,23 +40,33 @@ function initImages(){
       window.image = i
     }
     img.style.backgroundImage = "url(" + bg + ")"
-    img.addEventListener("mousedown",set)
-    img.addEventListener("touchstart",set)
+    img.addEventListener("mousedown",function(e){
+      e.stopPropagation()
+      let {clientX,clientY} = e
+      set(clientX,clientY)
+    })
+    img.addEventListener("touchstart",function(e){
+      e.stopPropagation()
+      let {clientX,clientY} = e.targetTouches[0]
+      set(clientX,clientY)
+    })
   }
   window.addEventListener("mousemove",function(e){
     e.preventDefault()
+    e.stopPropagation()
     let {clientX,clientY} = e
-    cursor.style.top = clientY + "px"
-    cursor.style.left = clientX + "px"
+    if(window.cursor){
+      window.cursor.style.top = clientY + "px"
+      window.cursor.style.left = clientX + "px"
+    }
     let x = clientX / window.innerWidth
     let y = clientY / window.innerHeight
     document.body.style.backgroundPosition = x * 100 + "% " + y * 100 + "%"
   })
   window.addEventListener("touchmove",function(e){
     e.preventDefault()
+    e.stopPropagation()
     let {clientX,clientY} = e.targetTouches[0]
-    cursor.style.top = clientY + "px"
-    cursor.style.left = clientX + "px"
     let x = clientX / window.innerWidth
     let y = clientY / window.innerHeight
     document.body.style.backgroundPosition = x * 100 + "% " + y * 100 + "%"
