@@ -1,7 +1,7 @@
 window.addEventListener('load',function(){
   // initClock();
   //initCounterTitle();
-  setupCursor();
+  // setupCursor();
   initImages()
 });
 

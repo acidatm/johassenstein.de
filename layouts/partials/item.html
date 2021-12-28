@@ -1,10 +1,7 @@
 
 <div class="row">
-  <div class="data data-1">
-    {{.Summary}}
-  </div>
-  {{ if (isset .Params "unspecificdate") }}
-  <div class="data data-2">
+  {{if (eq (len .Summary) 0) }}
+  <div class="data data-2 ">
     {{ dateFormat "2006" .Date }}
   </div>
   {{else}}
@@ -12,12 +9,18 @@
     {{ dateFormat "2006" .Date }}
   </div>
   <div class="data data-2 data-hover">
-    {{ dateFormat "2006" .Date }}
+    {{.Summary}}
   </div>
   {{end}}
+  {{if (eq (len .Summary) 0) }}
   <div class="data data-3">
     {{ if (isset .Params "types") }}{{.Param "types"}}{{end}}
   </div>
+  {{else}}
+  <div class="data data-3 data-no-hover">
+    {{ if (isset .Params "types") }}{{.Param "types"}}{{end}}
+  </div>
+  {{end}}
   {{ if (isset .Params "link") }}
   <a class="data data-4 data-link"href='{{.Param "link" }}' target="_blank" title="{{.Title}}">
   {{else}}
@@ -27,7 +30,7 @@
       {{ if (isset .Params "title") }}{{.Param "title"}}{{end}}
     </span>
     <span class="data-hover">
-      {{.Content}}
+      {{.Content}}&nbsp{{.Content}}
     </span>
   {{ if (isset .Params "link") }}
   </a>
