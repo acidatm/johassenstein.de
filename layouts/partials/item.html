@@ -9,6 +9,9 @@
     {{ dateFormat "2006" .Date }}
   </div>
   <div class="data data-2 data-hover">
+    {{ if (isset .Params "video") }}
+    <span class="video" data-src='{{.Param "video"}}'></span>
+    {{end}}
     {{.Content}}
   </div>
   {{end}}
@@ -22,7 +25,7 @@
   </div>
   {{end}}
   {{ if (isset .Params "link") }}
-  <a class="data data-4 data-link"href='{{.Param "link" }}' target="_blank" title="{{.Title}}">
+  <a class="data data-4 data-link" href='{{.Param "link" }}' target="_blank" title="{{.Title}}">
   {{else}}
   <div class="data data-4">
   {{end}}

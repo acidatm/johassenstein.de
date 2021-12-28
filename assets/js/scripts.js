@@ -3,8 +3,56 @@ window.addEventListener('load',function(){
   //initCounterTitle();
   // setupCursor();
   initImages()
+  initVideos()
+  initDisplays()
 });
 
+function initDisplays(){
+  let time = document.getElementById("time")
+  let day = document.getElementById("day")
+  updateDisplays(time,day)
+  setInterval(function () {
+    updateDisplays(time,day)
+  }, 1000);
+}
+function updateDisplays(t,d){
+  let days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
+  let date = new Date()
+  let day = date.getDay()
+  let time = date.getFullYear()
+  t.innerText = time
+  d.innerText = days[day]
+}
+function initVideos(){
+  const videos = [].slice.call(document.getElementsByClassName("video"))
+  const player = document.getElementById("player")
+  let unset = function(){
+    document.body.classList.remove("video-active")
+
+    player.pause()
+    player.currentTime = 0
+  }
+  for(let v in videos){
+    let video = videos[v]
+    let src = video.getAttribute("data-src")
+    let set = function(){
+      initdone = false
+      player.src = "/videos/" + src
+      player.play()
+      document.body.classList.add("video-active")
+    }
+    video.addEventListener("mousedown",function(e){
+      e.stopPropagation()
+      set()
+    })
+    video.addEventListener("touchstart",function(e){
+      e.stopPropagation()
+      set()
+    })
+  }
+  document.body.addEventListener("mouseup",unset)
+  document.body.addEventListener("touchend",unset)
+}
 function initImages(){
   const images = [].slice.call(document.getElementsByClassName("image"))
   window.image = false
