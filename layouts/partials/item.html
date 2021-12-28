@@ -1,6 +1,6 @@
 
 <div class="row">
-  {{if (eq (len .Summary) 0) }}
+  {{if (eq (len .Content) 0) }}
   <div class="data data-2 ">
     {{ dateFormat "2006" .Date }}
   </div>
@@ -9,10 +9,10 @@
     {{ dateFormat "2006" .Date }}
   </div>
   <div class="data data-2 data-hover">
-    {{.Summary}}
+    {{.Content}}
   </div>
   {{end}}
-  {{if (eq (len .Summary) 0) }}
+  {{if (eq (len .Content) 0) }}
   <div class="data data-3">
     {{ if (isset .Params "types") }}{{.Param "types"}}{{end}}
   </div>
@@ -30,7 +30,7 @@
       {{ if (isset .Params "title") }}{{.Param "title"}}{{end}}
     </span>
     <span class="data-hover">
-      {{.Content}}&nbsp{{.Content}}
+      {{ if (isset .Params "description") }}<p>{{.Param "description"}}&nbsp{{.Param "description"}}</p>{{end}}
     </span>
   {{ if (isset .Params "link") }}
   </a>
