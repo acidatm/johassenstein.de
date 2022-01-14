@@ -1,9 +1,10 @@
 ---
-title: Tram21
-link: https://branko3000.github.io/tram21/
+title: TRAM
+link: https://acidatm.itch.io/tram
 types: exe
-date: 2019-01-01
-description: TRAM is short for Typographic Rythm Automation Machine and is a midi sequencing language
+date: 2022-01-13
+description: TRAM is short for Typographic Rythm Automation Machine and is an esoteric midi sequencer
+video: tram.mp4
 ---
-{{<img preview-1>}}
-{{<img preview-2>}}
+{{<img screenshot-1>}}
+{{<img screenshot-2>}}
