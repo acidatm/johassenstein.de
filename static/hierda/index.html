@@ -209,11 +209,12 @@ function bezier (mX1, mY1, mX2, mY2) {
         out.push("<p>Da Da Da</p><p>Da Da Da Da Da</p><p>Da Da<p>")
         return out.join(" ") //return joined output
       }
-      const paragraphs = [5,4,5,2,3,1,4,7,6,8,3,6,6,3,7,6,3,4,7,6,6,7,6,3,6,5,6,3,6,4,3,4,3,9,4,6,3]
+      const paragraphs = [3,5,2,2,6,7,4,5,2,4,4,5,6,3]
       let total = 0
       for(let p of paragraphs){
         total += p
       }
+      console.log(total)
       window.addEventListener("load",function(){
         document.getElementById("out").innerHTML = generate(paragraphs,total)
       })
