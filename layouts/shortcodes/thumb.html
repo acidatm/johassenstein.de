@@ -9,4 +9,4 @@
 {{ $m := .Scratch.Get "medium" }}
 {{ $l := .Scratch.Get "large" }}
 {{ $f := .Scratch.Get "full" }}
-<img class="image" data-thumbnail="{{$thumbnail.Permalink}}" data-small="{{ $s.Permalink }}" data-medium="{{ $m.Permalink }}" data-large="{{ $l.Permalink }}" data-full="{{ $f.Permalink }}"></img>
+<span class="image" data-thumbnail="{{$thumbnail.Permalink}}" data-small="{{ $s.Permalink }}" data-medium="{{ $m.Permalink }}" data-large="{{ $l.Permalink }}" data-full="{{ $f.Permalink }}"></span>

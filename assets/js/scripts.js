@@ -5,8 +5,58 @@ window.addEventListener('load',function(){
   initImages()
   initVideos()
   initDisplays()
+  initRows()
 });
 
+let activeRow = -1
+let rows = []
+let table = document.getElementById("table")
+function activateRow(e){
+  let row = e.target
+  let n = row.getAttribute("data-row-index")
+  if(activeRow == n){
+    row.classList.remove("open")
+    activeRow = -1
+  }
+  else{
+    if(activeRow != -1){
+      rows[activeRow].classList.remove("open")
+    }
+    let imgs = [].slice.call(row.getElementsByClassName("image"))
+    for(let i in imgs){
+      let img = imgs[i]
+      let srcset = {
+        640: img.getAttribute("data-small"),
+        768: img.getAttribute("data-medium"),
+        1080: img.getAttribute("data-large"),
+        1440: img.getAttribute("data-full")
+      }
+      let wset = Object.keys(srcset).sort((a, b) => a - b)
+      let src = false
+      for(let w in wset){
+        if(window.innerWidth < wset[w] && !src){
+          src = srcset[wset[w]]
+        }
+      }
+      if(!src){
+        src = srcset[wset[wset.length - 1]]
+      }
+      img.src = src
+    }
+    row.classList.add("open")
+    activeRow = rows.indexOf(row)
+    // table.scrollTo(0,row.offsetTop)
+  }
+}
+
+function initRows(){
+  rows = [].slice.call(document.getElementsByClassName("row"))
+  for(let r in rows){
+    let row = rows[r]
+    row.setAttribute("data-row-index",r)
+    row.addEventListener("click",activateRow)
+  }
+}
 function initDisplays(){
   let time = document.getElementById("time")
   let day = document.getElementById("day")

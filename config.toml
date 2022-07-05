@@ -1,6 +1,6 @@
 baseURL = "https://johassenstein.de"
 languageCode = "de-de"
-title = "Johannes"
+title = "Auch das geht vorbei"
 defaultContentLanguage = 'de'
 disableKinds = [ "RSS", "sitemap", "robotsTXT"]
 timeout = 60000

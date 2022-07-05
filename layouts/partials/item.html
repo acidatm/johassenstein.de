@@ -1,43 +1,31 @@
 
-<div class="row">
-  {{if (eq (len .Content) 0) }}
-  <div class="data data-2 ">
-    {{ dateFormat "2006" .Date }}
-  </div>
-  {{else}}
+<div class="row" title="More about {{ if (isset .Params "title") }}{{.Param "title"}}{{end}}">
+  <!--DATA2-->
   <div class="data data-2 data-no-hover">
     {{ dateFormat "2006" .Date }}
   </div>
   <div class="data data-2 data-hover">
-    {{ if (isset .Params "video") }}
-    <span class="video" data-src='{{.Param "video"}}'></span>
+    {{ if (isset .Params "link") }}
+    <a class="data-link" href='{{.Param "link" }}' target="_blank" title="{{.Title}}">Link</a>
+    {{else}}
+    {{ dateFormat "2006" .Date }}
     {{end}}
-    {{.Content}}
   </div>
-  {{end}}
-  {{if (eq (len .Content) 0) }}
+  <!--DATA3-->
   <div class="data data-3">
     {{ if (isset .Params "types") }}{{.Param "types"}}{{end}}
   </div>
-  {{else}}
-  <div class="data data-3 data-no-hover">
-    {{ if (isset .Params "types") }}{{.Param "types"}}{{end}}
-  </div>
-  {{end}}
-  {{ if (isset .Params "link") }}
-  <a class="data data-4 data-link" href='{{.Param "link" }}' target="_blank" title="{{.Title}}">
-  {{else}}
+  <!--DATA4-->
   <div class="data data-4">
-  {{end}}
     <span class="data-no-hover">
       {{ if (isset .Params "title") }}{{.Param "title"}}{{end}}
     </span>
     <span class="data-hover">
-      {{ if (isset .Params "description") }}<p>{{.Param "description"}}&nbsp{{.Param "description"}}</p>{{end}}
+      {{ if (isset .Params "description") }}<p>{{.Param "description"}}&nbsp{{.Param "description"}}&nbsp{{.Param "description"}}&nbsp{{.Param "description"}}&nbsp{{.Param "description"}}&nbsp{{.Param "description"}}</p>{{end}}
     </span>
-  {{ if (isset .Params "link") }}
-  </a>
-  {{else}}
   </div>
-  {{end}}
+  <div class="content">
+    {{ if (isset .Params "description") }}<p class="description">{{.Param "description"}}</p>{{end}}
+    {{.Content}}
+  </div>
 </div>
