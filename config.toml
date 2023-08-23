@@ -3,7 +3,7 @@ languageCode = "de-de"
 title = "Johannes Hassenstein"
 defaultContentLanguage = 'de'
 disableKinds = [ "RSS", "sitemap", "robotsTXT"]
-timeout = 60000
+timeout = 120000
 [blackfriday]
 	hrefTargetBlank = true
 [taxonomies]
