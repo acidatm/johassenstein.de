@@ -1,44 +1,12 @@
 baseURL = "https://johassenstein.de"
 languageCode = "de-de"
-title = "Auch das geht vorbei"
+title = "Johannes Hassenstein"
 defaultContentLanguage = 'de'
 disableKinds = [ "RSS", "sitemap", "robotsTXT"]
 timeout = 60000
 [blackfriday]
 	hrefTargetBlank = true
 [taxonomies]
-type = "types"
+tag = "tags"
 [params]
-description = 'Ruf mich vor der Arbeit an, ich battle dich in Shorts'
-background = '#ffffff'
-color = '#000000'
-news = [
-["Check out ABC*-Festival","https://abcfestival.de"],
-["Ruf mich vor der Arbeit an, ich battle dich in Shorts","/"]
-]
-[menu]
-  [[menu.contact]]
-     identifier = "mail"
-     name = "johannes.hassenstein[at]pm.me"
-     url = "mailto:johannes.hassenstein@pm.me"
-     weight = 1
-	 [[menu.contact]]
-     identifier = "instagram"
-     name = "instagram/acidatm"
-     url = "https://instagram.com/acidatm"
-     weight = 2
-	 [[menu.contact]]
-	 	identifier = "soundcloud"
-	 	name = "soundcloud/acidatm"
-	 	url = "https://soundcloud.com/acidatm"
-	 	weight = 3
-	 [[menu.contact]]
-     identifier = "github"
-     name = "github/branko3000"
-     url = "https://github.com/branko3000"
-     weight = 4
-	 [[menu.contact]]
-	 	identifier = "itch"
-	 	name = "branko3000.itch.io"
-	 	url = "https://branko3000.itch.io"
-	 	weight = 5
+description = "Test"

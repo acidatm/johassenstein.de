@@ -3,70 +3,12 @@
   <head>
     {{ partial "head.html" . }}
   </head>
-  <body class="list">
-    <div class="header">
-      <div class="row">
-        <div class="data data-2">
-          Date
-        </div>
-        <div class="data data-3">
-          Typ
-        </div>
-        <div class="data data-4">
-          <h1>
-            Johannes Hassenstein
-          </h1>
-        </div>
-      </div>
-    </div>
-    <div class="table" id="table">
-      {{ range .Pages }}
-      {{ partial "item.html" . }}
-      {{end}}
-      <div class="row last" title="More about acidatm">
-        <a href="https://acidatm.de" target="_blank" title="Go to acidatm.de">
-          I make techno as acid at the mall
-        </a>
-      </div>
-    </div>
-    <div class="footer">
-      <div class="row">
-          <!-- <div class="data data-1">
-            <ul>
-              <li>
-                <a href="https://instagram.com/acidatm" target="_blank"><img src="/img/icons/4.png" alt="Instagram"></a>
-              </li>
-              <li>
-                <a href="https://github.com/acidatm" target="_blank"><img src="/img/icons/3.png" alt="Github"></a>
-              </li>
-              <li>
-                <a href="https://acidatm.itch.io/" target="_blank"><img src="/img/icons/2.png" alt="itch.io"></a>
-              </li>
-              <li>
-                <a href="https://soundcloud.com/acidatm" target="_blank"><img src="/img/icons/1.png" alt="Soundcloud"></a>
-              </li>
-              <li>
-                <a href="https://acidatm.bandcamp.com" target="_blank"><img src="/img/icons/5.png" alt="Bandcamp"></a>
-              </li>
-              <li>
-                <a href="https://open.spotify.com/artist/2mYH24BGh8rLGKI8FaHess?si=2VpLOQk8SMOJJUcI83mEsg" target="_blank"><img src="/img/icons/0.png" alt="Spotify"></a>
-              </li>
-            </ul>
-          </div> -->
-        <div class="data data-2" id="time">
-          ----
-        </div>
-        <div class="data data-3" id="day">
-          ---
-        </div>
-        <div class="data data-4 imprint">
-          <a href="/impressum.txt" target="_blank">Impressum</a>
-        </div>
-      </div>
-    </div>
-    <video id="player" loop playsinline controls="false"></video>
-    <footer>
-    </footer>
+  <body id="index" class="index">
+    {{ partial "header.html" . }}
+    <main class="index_container">
+      <a title="more about this work" id="indexDescription"></a><br><br><br><br>
+      <a title="more about this work" id="indexLink"></a>
+    </main>
     {{ partial "footer.html" . }}
   </body>
 </html>

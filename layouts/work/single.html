@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body class="work">
+    {{ partial "header.html" . }}
+    <main class="index_container">
+      <ul class="index_list">
+        {{$topics := where .Site.Pages ".Params.weight" "gt" 0}}
+        {{range $topics}}
+        {{$topic := . }}
+        {{$pages := where .Site.Pages "Params.tags" "intersect" (slice .Type)}}
+        <li class="index_list_item">
+          <a href="{{.Permalink}}" title="{{.Title}}">
+            <h2 class="topic">
+              {{.Title}}
+            </h2>
+          </a>
+          <ul class="topic_list">
+            {{range $pages}}
+            {{if (ne . $topic)}}
+            <li class="topic_list_item">
+              <h3 class="topic_list_item_title">
+                <a href="{{.Permalink}}" title="{{.Title}}">
+                  "{{.Title}}" - {{.Params.cat}}, <i>{{.Params.time}}</i>
+                </a>
+              </h3>
+            </li>
+            {{end}}
+            {{end}}
+          </ul>
+        </li>
+        {{end}}
+      </ul>
+    </main>
+    {{ partial "footer.html" . }}
+  </body>
+</html>

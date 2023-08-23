@@ -1,157 +1,145 @@
-window.addEventListener('load',function(){
-  initParticles();
-  initClock();
-  //initCounterTitle();
-  setupCursor();
+const INDEX_TOPICS = [
+  {
+    image: 'dino',
+    color: '#000000',
+    description: '"TRAM / What\'s your favourite dinosaur?"\n\nesoteric programming language,\ntypographic midi sequencer and\ninteractive installation\n2022',
+    link: '/software/tram',
+  },
+  {
+    image: 'hykom',
+    color: '#ffffff',
+    description: '"HYKOM"\n\nstagedesign, sound, graphics and\ncustom font for a play at the\nDeutsches Schauspielhaus Hamburg\n2022',
+    link: '/graphic/hykom/',
+  },
+  {
+    image: 'xeroxpark',
+    color: '#ffffff',
+    description: '"Xerox Park"\n\nacid techno ep,\ntaperelease with\nriso printed jcards\n2023',
+    link: '/music/xeroxpark/',
+  }
+]
+let N = 2
+
+window.addEventListener('DOMContentLoaded',function(){
+  initImages()
+  initVideos()
+  initIndex()
+  document.body.addEventListener("mouseup",unset)
+  document.body.addEventListener("touchend",unset)
 });
-window.addEventListener("resize",function(){
-  initParticles();
-})
 
-window.active = false;
-window.article = false;
-window.preserve = false;
-
-function initClock(){
-  let date = new Date()
-  let hours = ('0'+ date.getHours()).slice(-2)
-  let minutes = ('0'+ date.getMinutes()).slice(-2)
-  let seconds = ('0'+ date.getSeconds()).slice(-2)
-  document.title = hours + ':' + minutes + ':' + seconds
-  setInterval(function () {
-    let date = new Date()
-    let hours = ('0'+ date.getHours()).slice(-2)
-    let minutes = ('0'+ date.getMinutes()).slice(-2)
-    let seconds = ('0'+ date.getSeconds()).slice(-2)
-    document.title = hours + ':' + minutes + ':' + seconds
-  }, 1000);
+function unset(){
+  document.body.classList.remove("image-active","video-active")
 }
 
-function initCounterTitle(){
-  setTitle();
-  document.addEventListener("click",function(){
-    document.title = "0000"
-  })
+function initIndex(){
+  let index = document.getElementById("index")
+  let link = document.getElementById("indexDescription")
+  if(index){
+    index.addEventListener("click",randomIndexTopic)
+    link.addEventListener("click",function(e){
+      e.stopPropagation()
+    })
+    randomIndexTopic()
+  }
 }
-function setTitle(){
-  document.title = ("000" + (Number(document.title) + 1) % 3001).slice(-4)
-  setTimeout(function () {
-    setTitle()
-  }, 10);
-}
-function setActive(element,force){
-  if(force || !window.preserve){
-    if(window.article == element){
-      element.classList.remove("active");
-      window.article = false;
+
+function randomIndexTopic(){
+  let oldtopic = false
+  if(N < 0){
+    N = Math.floor(Math.random() * INDEX_TOPICS.length)
+  }
+  else{
+    oldtopic = INDEX_TOPICS[N]
+    N++
+    if(N == INDEX_TOPICS.length){
+      N = 0
     }
-    else{
-      if(window.article){
-        window.article.classList.remove("active");
+  }
+  let index = document.getElementById("index")
+  let description = document.getElementById("indexDescription")
+  let link = document.getElementById("indexLink")
+
+
+  let topic = INDEX_TOPICS[N]
+  let imagetype = window.innerWidth + 200 < window.innerHeight ? "mobile" : window.innerHeight + 200 < window.innerWidth ? "desktop" : "square"
+  let imageUrl = "/index/" + topic.image + "_" + imagetype + ".jpg"
+
+  if(oldtopic){
+    index.classList.remove("topic-"+oldtopic.image)
+  }
+  index.classList.add("topic-"+topic.image)
+  index.style.backgroundImage = 'url("' + imageUrl + '")'
+  index.style.color = topic.color
+
+
+  description.innerText = topic.description
+  description.href = topic.link
+  description.style.color = topic.color
+
+  link.href = topic.link
+  link.innerHTML = "more >>>"
+  link.style.color = topic.color
+}
+
+function initVideos(){
+  const videos = [].slice.call(document.getElementsByClassName("video"))
+  const display = document.getElementById("display")
+  const video = document.getElementById("video")
+  function set(vid){
+    display.style.backgroundImage = "none"
+    document.body.classList.add("video-active")
+    video.src = vid.src
+  }
+  for(let v in videos){
+    let vid = videos[v]
+    vid.addEventListener("mousedown",function(e){
+      set(vid)
+    })
+    vid.addEventListener("touchstart",function(e){
+      set(vid)
+    })
+  }
+}
+
+function initImages(){
+  const images = [].slice.call(document.getElementsByClassName("image"))
+  const display = document.getElementById("display")
+
+  function set(img,full){
+    let src = getSrc(img,full)
+    display.style.backgroundImage = "url(" + src + ")"
+    document.body.classList.add("image-active")
+  }
+  function getSrc(img,full){
+    let bg = img.getAttribute("data-thumbnail")
+    let src
+    let cap = full ? window.innerWidth : 1080
+    let srcset = {
+      640: img.getAttribute("data-small"),
+      768: img.getAttribute("data-medium"),
+      1080: img.getAttribute("data-large"),
+      1440: img.getAttribute("data-full")
+    }
+    let wset = Object.keys(srcset).sort((a, b) => a - b)
+    for(let w in wset){
+      if(cap < wset[w] && !src){
+        src = srcset[wset[w]]
       }
-      window.article = element;
-      preload(element)
-      element.classList.add("active");
-      setTimeout(function () {
-        element.parentNode.scrollTop = element.offsetTop;
-      }, 10,element);
-
     }
+    if(!src){
+      src = srcset[wset[wset.length - 1]]
+    }
+    return src
   }
-}
-function toggleActive(element){
-  if(!window.preserve){
-    if(window.active === element){
-      activate(element,false)
-    }
-    else{
-      activate(element,true)
-    }
+  for(let i in images){
+    let img = images[i]
+    img.src = getSrc(img)
+    img.addEventListener("mousedown",function(e){
+      set(img,true)
+    })
+    img.addEventListener("touchstart",function(e){
+      set(img,true)
+    })
   }
-}
-function activate(element, flag, force){
-  if(!force){
-    force = false
-  }
-  if(force || !window.preserve){
-    if(flag){
-      if(window.active){
-        activate(window.active,false,force)
-      }
-      element.classList.add("active");
-      window.active = element;
-    }
-    else{
-      element.classList.remove("active");
-      window.active = false
-    }
-  }
-}
-
-function initParticles(){
-  // if(window.innerWidth < 640){
-  //   particlesJS.load('particles', 'config/particles-small.json');
-  // }
-  // else if(window.innerWidth < 1080){
-  //   particlesJS.load('particles', 'config/particles-medium.json');
-  // }
-  // else{
-  //   particlesJS.load('particles', 'config/particles-large.json');
-  // }
-  particlesJS.load('particles', 'config/particles.json');
-}
-
-function setupCursor(){
-  // document.body.style.cursor = 'none';
-  var cursor = document.createElement('div');
-  cursor.id = 'ufo';
-  document.body.appendChild(cursor)
-  window.addEventListener('mousemove',function(e){
-    cursor.style.top = e.clientY;
-    cursor.style.left = e.clientX;
-  },cursor);
-}
-
-function preload(element){
-  if(!element.classList.contains("loaded")){
-    var res = "thumbnail";
-    if(window.innerWidth > 768){
-      res = "large"
-    }
-    else if(window.innerWidth > 640){
-      res = "medium"
-    }
-    else if(window.innerWidth > 480){
-      res = "small"
-    }
-    var images = [].slice.call(element.getElementsByTagName('img'));
-    for(var img in images){
-      img = images[img]
-      img.src = img.getAttribute("data-" + res)
-    }
-    element.classList.add("loaded")
-  }
-}
-
-function openLightbox(element){
-  window.preserve = true;
-  var lightbox = document.getElementById("lightbox");
-  var container = document.getElementById("lightbox-container");
-  lightbox.style.backgroundImage = "url(" + element.getAttribute("data-full") + ")";
-  container.classList.add("open");
-}
-function closeLightbox(){
-  var lightbox = document.getElementById("lightbox");
-  var container = document.getElementById("lightbox-container");
-  lightbox.style.backgroundImage = "none";
-  container.classList.remove("open");
-  setTimeout(function () {
-    window.preserve = false;
-  }, 500);
-}
-function cancelBubble(e){
-
-    e.cancelBubble = true;
-    if(e.stopPropagation)
-     e.stopPropagation();
 }

@@ -1,13 +1,18 @@
-<aside class='newsfeed'>
-  <div id="newsfeed">
-    {{range .Site.Params.news}}
-    <a class='item' href='{{index . 1}}' title='{{index . 0}}' target='_blank'>{{index . 0}}</a>
-    {{end}}
-  </div>
-</aside>
-<!-- <aside class="contact">
-  <a href="mailto:{{.Site.Params.mail}}" title="Contact" target="_blank">
-    <img src="img/contact.gif" alt="e">
-  </a>
-</aside> -->
-<img id="logo" src="img/logo.svg" alt="3000">
+<div id="display">
+  <video id="video" src="" autoplay loop muted></video>
+</div>
+<header class="header">
+  <ul class="header_menu">
+  <li>
+    <a href="/work">
+      <h1>
+        Johannes Hassenstein
+      </h1>
+    </a>
+  </li>
+  <li>
+    <a href="/cv">
+      CV
+    </a>
+  </li>
+</header>

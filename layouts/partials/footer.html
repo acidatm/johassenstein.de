@@ -1,2 +1,16 @@
 {{ $scripts := resources.Get  "js/scripts.js" | fingerprint }}
 <script src="{{ $scripts.Permalink }}"></script>
+<footer class="footer">
+  <ul class="footer_menu">
+    <li class="footer_menu_item">
+      <a href="mailto:johannes.hassenstein@pm.me" title="Contact">
+        Contact
+      </a>
+    </li>
+    <li class="footer_menu_item">
+      <a href="/imprint" title="Imprint">
+        Imprint
+      </a>
+    </li>
+  </ul>
+</footer>

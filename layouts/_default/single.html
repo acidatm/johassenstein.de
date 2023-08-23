@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body class="single">
+    {{ partial "header.html" . }}
+    <main class="list_container">
+      <div class="single_container">
+        <div class="single_header">
+          <h4 class="single_title">
+            {{.Title}}
+          </h4>
+          <time class="single_time">
+            {{.Params.time}}
+          </time>
+          <aside class="single_cat">
+            {{.Params.cat}}
+          </aside>
+          <br><br>
+          <div class="single_description">
+            {{.Description}}
+          </div>
+        </div>
+        <div class="single_content">
+          {{.Content}}
+        </div>
+        <div class="single_related">
+          {{if .Params.relatedWorks}}
+          <ul class="single_related_works">
+            <li>
+              <h6>
+                Related Works
+              </h6>
+            </li>
+            {{range .Params.relatedWorks}}
+            <li>
+              <a href="/{{.}}" title="{{.}}">
+                {{.}}
+              </a>
+            </li>
+            {{end}}
+          </ul>
+          {{end}}
+          {{if .Params.relatedLinks}}
+          <ul class="single_related_links">
+            <li>
+              <h6>
+                Related Links
+              </h6>
+            </li>
+            {{range .Params.relatedLinks}}
+            <li>
+              <a href="{{.}}" title="{{.}}" target="_blank">
+                {{.}}
+              </a>
+            </li>
+            {{end}}
+          </ul>
+          {{end}}
+        </div>
+      </div>
+      <ul class="list_menu">
+        {{$topics := where .Site.Pages ".Params.weight" "gt" 0}}
+        {{$topic := . }}
+        {{$pages := where .Site.Pages "Params.tags" "intersect" (slice $topic.Type)}}
+        {{range $topics}}
+          {{if eq (lower .Title) (lower $topic.Type)}}
+          <li><ul class="topic_container">
+            <li class="list_menu_item">
+                <h2 class="topic">
+                  {{title .Type}}
+                </h2>
+            </li>
+            {{range $pages}}
+            {{if isset .Params "weight"}}
+            {{else if ne . $topic}}
+            <li class="list_menu_item">
+              <h3 class="list_menu_item_title">
+                <a href="{{.Permalink}}" title="{{.Title}}">
+                  "{{.Title}}" - {{.Params.cat}}, <i>{{.Params.time}}</i>
+                </a>
+              </h3>
+            </li>
+            {{end}}
+            {{end}}
+          </ul></li>
+          {{else}}
+          <li class="list_menu_item nopad">
+            <a href="{{.Permalink}}" title="{{.Title}}">
+              <h2>
+                {{.Title}}
+              </h2>
+            </a>
+          </li>
+        {{end}}
+        {{end}}
+      </ul>
+    </main>
+    {{ partial "footer.html" . }}
+  </body>
+</html>

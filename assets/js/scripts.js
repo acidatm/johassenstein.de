@@ -1,117 +1,120 @@
-window.addEventListener('load',function(){
-  // initClock();
-  //initCounterTitle();
-  // setupCursor();
+const INDEX_TOPICS = [
+  {
+    image: 'dino',
+    color: '#000000',
+    description: '"TRAM / What\'s your favourite dinosaur?"\n\nesoteric programming language,\ntypographic midi sequencer and\ninteractive installation\n2022',
+    link: '/software/tram',
+  },
+  {
+    image: 'hykom',
+    color: '#ffffff',
+    description: '"HYKOM"\n\nstagedesign, sound, graphics and\ncustom font for a play at the\nDeutsches Schauspielhaus Hamburg\n2022',
+    link: '/graphic/hykom/',
+  },
+  {
+    image: 'xeroxpark',
+    color: '#ffffff',
+    description: '"Xerox Park"\n\nacid techno ep,\ntaperelease with\nriso printed jcards\n2023',
+    link: '/music/xeroxpark/',
+  }
+]
+let N = 2
+
+window.addEventListener('DOMContentLoaded',function(){
   initImages()
   initVideos()
-  initDisplays()
-  initRows()
-});
-
-let activeRow = -1
-let rows = []
-let table = document.getElementById("table")
-function activateRow(e){
-  let row = e.target
-  let n = row.getAttribute("data-row-index")
-  if(activeRow == n){
-    row.classList.remove("open")
-    activeRow = -1
-  }
-  else{
-    if(activeRow != -1){
-      rows[activeRow].classList.remove("open")
-    }
-    let imgs = [].slice.call(row.getElementsByClassName("image"))
-    for(let i in imgs){
-      let img = imgs[i]
-      let srcset = {
-        640: img.getAttribute("data-small"),
-        768: img.getAttribute("data-medium"),
-        1080: img.getAttribute("data-large"),
-        1440: img.getAttribute("data-full")
-      }
-      let wset = Object.keys(srcset).sort((a, b) => a - b)
-      let src = false
-      for(let w in wset){
-        if(window.innerWidth < wset[w] && !src){
-          src = srcset[wset[w]]
-        }
-      }
-      if(!src){
-        src = srcset[wset[wset.length - 1]]
-      }
-      img.src = src
-    }
-    row.classList.add("open")
-    activeRow = rows.indexOf(row)
-    // table.scrollTo(0,row.offsetTop)
-  }
-}
-
-function initRows(){
-  rows = [].slice.call(document.getElementsByClassName("row"))
-  for(let r in rows){
-    let row = rows[r]
-    row.setAttribute("data-row-index",r)
-    row.addEventListener("click",activateRow)
-  }
-}
-function initDisplays(){
-  let time = document.getElementById("time")
-  let day = document.getElementById("day")
-  updateDisplays(time,day)
-  setInterval(function () {
-    updateDisplays(time,day)
-  }, 1000);
-}
-function updateDisplays(t,d){
-  let days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
-  let date = new Date()
-  let day = date.getDay()
-  let time = date.getFullYear()
-  t.innerText = time
-  d.innerText = days[day]
-}
-function initVideos(){
-  const videos = [].slice.call(document.getElementsByClassName("video"))
-  const player = document.getElementById("player")
-  let unset = function(){
-    document.body.classList.remove("video-active")
-
-    player.pause()
-    player.currentTime = 0
-  }
-  for(let v in videos){
-    let video = videos[v]
-    let src = video.getAttribute("data-src")
-    let set = function(){
-      initdone = false
-      player.src = "/videos/" + src
-      player.play()
-      document.body.classList.add("video-active")
-    }
-    video.addEventListener("mousedown",function(e){
-      e.stopPropagation()
-      set()
-    })
-    video.addEventListener("touchstart",function(e){
-      e.stopPropagation()
-      set()
-    })
-  }
+  initIndex()
   document.body.addEventListener("mouseup",unset)
   document.body.addEventListener("touchend",unset)
+});
+
+function unset(){
+  document.body.classList.remove("image-active","video-active")
 }
+
+function initIndex(){
+  let index = document.getElementById("index")
+  let link = document.getElementById("indexDescription")
+  if(index){
+    index.addEventListener("click",randomIndexTopic)
+    link.addEventListener("click",function(e){
+      e.stopPropagation()
+    })
+    randomIndexTopic()
+  }
+}
+
+function randomIndexTopic(){
+  let oldtopic = false
+  if(N < 0){
+    N = Math.floor(Math.random() * INDEX_TOPICS.length)
+  }
+  else{
+    oldtopic = INDEX_TOPICS[N]
+    N++
+    if(N == INDEX_TOPICS.length){
+      N = 0
+    }
+  }
+  let index = document.getElementById("index")
+  let description = document.getElementById("indexDescription")
+  let link = document.getElementById("indexLink")
+
+
+  let topic = INDEX_TOPICS[N]
+  let imagetype = window.innerWidth + 200 < window.innerHeight ? "mobile" : window.innerHeight + 200 < window.innerWidth ? "desktop" : "square"
+  let imageUrl = "/index/" + topic.image + "_" + imagetype + ".jpg"
+
+  if(oldtopic){
+    index.classList.remove("topic-"+oldtopic.image)
+  }
+  index.classList.add("topic-"+topic.image)
+  index.style.backgroundImage = 'url("' + imageUrl + '")'
+  index.style.color = topic.color
+
+
+  description.innerText = topic.description
+  description.href = topic.link
+  description.style.color = topic.color
+
+  link.href = topic.link
+  link.innerHTML = "more >>>"
+  link.style.color = topic.color
+}
+
+function initVideos(){
+  const videos = [].slice.call(document.getElementsByClassName("video"))
+  const display = document.getElementById("display")
+  const video = document.getElementById("video")
+  function set(vid){
+    display.style.backgroundImage = "none"
+    document.body.classList.add("video-active")
+    video.src = vid.src
+  }
+  for(let v in videos){
+    let vid = videos[v]
+    vid.addEventListener("mousedown",function(e){
+      set(vid)
+    })
+    vid.addEventListener("touchstart",function(e){
+      set(vid)
+    })
+  }
+}
+
 function initImages(){
   const images = [].slice.call(document.getElementsByClassName("image"))
-  window.image = false
-  let unset = function(){
-    document.body.classList.remove("image-active")
+  const display = document.getElementById("display")
+
+  function set(img,full){
+    let src = getSrc(img,full)
+    display.style.backgroundImage = "url(" + src + ")"
+    document.body.classList.add("image-active")
   }
-  for(let i in images){
-    let img = images[i]
+  function getSrc(img,full){
     let bg = img.getAttribute("data-thumbnail")
+    let src
+    let cap = full ? window.innerWidth : 1080
     let srcset = {
       640: img.getAttribute("data-small"),
       768: img.getAttribute("data-medium"),
@@ -119,88 +122,24 @@ function initImages(){
       1440: img.getAttribute("data-full")
     }
     let wset = Object.keys(srcset).sort((a, b) => a - b)
-    let set = function(x,y){
-      x = x / window.innerWidth
-      y = y / window.innerHeight
-      document.body.style.backgroundPosition = x * 100 + "% " + y * 100 + "%"
-      let src = false
-      for(let w in wset){
-        if(window.innerWidth < wset[w] && !src){
-          src = srcset[wset[w]]
-        }
+    for(let w in wset){
+      if(cap < wset[w] && !src){
+        src = srcset[wset[w]]
       }
-      if(!src){
-        src = srcset[wset[wset.length - 1]]
-      }
-      document.body.style.backgroundImage = "url(" + src + ")"
-      document.body.classList.remove("image-full")
-      document.body.classList.add("image-active")
-      window.image = i
     }
-    img.style.backgroundImage = "url(" + bg + ")"
+    if(!src){
+      src = srcset[wset[wset.length - 1]]
+    }
+    return src
+  }
+  for(let i in images){
+    let img = images[i]
+    img.src = getSrc(img)
     img.addEventListener("mousedown",function(e){
-      e.stopPropagation()
-      let {clientX,clientY} = e
-      set(clientX,clientY)
+      set(img,true)
     })
     img.addEventListener("touchstart",function(e){
-      e.stopPropagation()
-      let {clientX,clientY} = e.targetTouches[0]
-      set(clientX,clientY)
+      set(img,true)
     })
   }
-  window.addEventListener("mousemove",function(e){
-    e.preventDefault()
-    e.stopPropagation()
-    let {clientX,clientY} = e
-    if(window.cursor){
-      window.cursor.style.top = clientY + "px"
-      window.cursor.style.left = clientX + "px"
-    }
-    let x = clientX / window.innerWidth
-    let y = clientY / window.innerHeight
-    document.body.style.backgroundPosition = x * 100 + "% " + y * 100 + "%"
-  })
-  window.addEventListener("touchmove",function(e){
-    e.preventDefault()
-    e.stopPropagation()
-    let {clientX,clientY} = e.targetTouches[0]
-    let x = clientX / window.innerWidth
-    let y = clientY / window.innerHeight
-    document.body.style.backgroundPosition = x * 100 + "% " + y * 100 + "%"
-  })
-  document.body.addEventListener("mouseup",unset)
-  document.body.addEventListener("touchend",unset)
-}
-
-window.active = false;
-window.article = false;
-window.preserve = false;
-
-function initClock(){
-  let base = new Date()
-  let date = new Date()
-  let hours = ('0'+ (date.getHours() - base.getHours())).slice(-2)
-  let minutes = ('0'+ (date.getMinutes() - base.getMinutes())).slice(-2)
-  let seconds = ('0'+ (date.getSeconds() - base.getSeconds())).slice(-2)
-  document.title = hours + ':' + minutes + ':' + seconds
-  setInterval(function () {
-    let date = new Date()
-    let hours = ('0'+ (date.getHours() - base.getHours())).slice(-2)
-    let minutes = ('0'+ (date.getMinutes() - base.getMinutes())).slice(-2)
-    let seconds = ('0'+ (date.getSeconds() - base.getSeconds())).slice(-2)
-    document.title = hours + ':' + minutes + ':' + seconds
-  }, 1000);
-}
-function setupCursor(){
-  if(!isTouchEnabled()){
-    window.cursor = document.createElement('div');
-    cursor.id = 'ufo';
-    document.body.appendChild(cursor)
-  }
-}
-function isTouchEnabled() {
-    return ( 'ontouchstart' in window ) ||
-           ( navigator.maxTouchPoints > 0 ) ||
-           ( navigator.msMaxTouchPoints > 0 );
 }

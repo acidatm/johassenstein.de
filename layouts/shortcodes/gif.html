@@ -1,2 +1,0 @@
-{{ $original := .Page.Resources.GetMatch (printf "*%s*" (.Get 0)) }}
-<img onclick="openLightbox(this)" data-thumbnail="{{ $original.Permalink }}" data-small="{{ $original.Permalink }}" data-medium="{{ $original.Permalink }}" data-large="{{ $original.Permalink }}" data-full="{{ $original.Permalink }}">
