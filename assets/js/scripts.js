@@ -19,16 +19,17 @@ const INDEX_TOPICS = [
   }
 ]
 let N = 2
+let INIT = false
 
 window.addEventListener('DOMContentLoaded',function(){
   initImages()
   initVideos()
   initIndex()
-  document.body.addEventListener("mouseup",unset)
-  document.body.addEventListener("touchend",unset)
 });
 
-function unset(){
+function unset(e){
+  e.stopPropagation()
+  console.log("Unset");
   document.body.classList.remove("image-active","video-active")
 }
 
@@ -45,6 +46,14 @@ function initIndex(){
 }
 
 function randomIndexTopic(){
+  if(!INIT){
+    for(let t in INDEX_TOPICS){
+      let topic = INDEX_TOPICS[t]
+      let image = new Image()
+      image.src = getIndexImageForTopic(topic)
+    }
+    INIT = true
+  }
   let oldtopic = false
   if(N < 0){
     N = Math.floor(Math.random() * INDEX_TOPICS.length)
@@ -62,9 +71,13 @@ function randomIndexTopic(){
 
 
   let topic = INDEX_TOPICS[N]
-  let imagetype = window.innerWidth + 200 < window.innerHeight ? "mobile" : window.innerHeight + 200 < window.innerWidth ? "desktop" : "square"
-  let imageUrl = "/index/" + topic.image + "_" + imagetype + ".jpg"
+  let imageUrl = getIndexImageForTopic(topic)
 
+  function getIndexImageForTopic(topic){
+    let imagetype = window.innerWidth + 200 < window.innerHeight ? "mobile" : window.innerHeight + 200 < window.innerWidth ? "desktop" : "square"
+    let imageUrl = "/index/" + topic.image + "_" + imagetype + ".jpg"
+    return imageUrl
+  }
   if(oldtopic){
     index.classList.remove("topic-"+oldtopic.image)
   }
@@ -86,6 +99,7 @@ function initVideos(){
   const videos = [].slice.call(document.getElementsByClassName("video"))
   const display = document.getElementById("display")
   const video = document.getElementById("video")
+  video.addEventListener("click",unset)
   function set(vid){
     display.style.backgroundImage = "none"
     document.body.classList.add("video-active")
@@ -93,10 +107,7 @@ function initVideos(){
   }
   for(let v in videos){
     let vid = videos[v]
-    vid.addEventListener("mousedown",function(e){
-      set(vid)
-    })
-    vid.addEventListener("touchstart",function(e){
+    vid.addEventListener("click",function(e){
       set(vid)
     })
   }
@@ -105,6 +116,7 @@ function initVideos(){
 function initImages(){
   const images = [].slice.call(document.getElementsByClassName("image"))
   const display = document.getElementById("display")
+  display.addEventListener("click",unset)
 
   function set(img,full){
     let src = getSrc(img,full)
@@ -135,10 +147,7 @@ function initImages(){
   for(let i in images){
     let img = images[i]
     img.src = getSrc(img)
-    img.addEventListener("mousedown",function(e){
-      set(img,true)
-    })
-    img.addEventListener("touchstart",function(e){
+    img.addEventListener("click",function(e){
       set(img,true)
     })
   }
