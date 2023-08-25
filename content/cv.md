@@ -3,57 +3,49 @@ title: CV
 type: cv
 description:
 ---
-## 1999
-Geburt, Aachen
-
-## 2009
-Gymnasium, Johanneum Hamburg
-
 ## 2016
-Auslandsjahr, Neuseeland
+Auslandsaufenthalt, Neuseeland
 
 ## 2017
-"Bundeswettbewerb Philosophischer Essay", Teilnahme , 3. Platz
+"Bundeswettbewerb Philosophischer Essay", Teilnahme, 3. Platz
 
 ## 2018
 "Jugend Präsentiert", Finalteilnahme
 
-Beginn Freiberufliche Tätigkeit als Softwareentwickler
+Beginn Freiberufliche Tätigkeit als Softwareentwickler, seit 2018
 
 Abitur, Matthias Claudius Gymnasium Hamburg
 
-"Mensch Computer Interaktion", Studium, Universität Hamburg
+Beginn Studium,"Mensch Computer Interaktion", Universität Hamburg, bis 2019
 
 ## 2019
-"Backstage", Teilnahme, Deutsches Schauspielhaus Hamburg
-
-"Backstage Festival", Lesung, Deutsches Schauspielhaus Hamburg
+"Backstage", Teilnahme und Lesung, Deutsches Schauspielhaus Hamburg
 
 "ABC*-Festival", Veranstaltung und Organisation
 
-Ehrenamtliche Tätigkeit, Ausstellungsorganisation, Frappant Galerie
+Beginn Ehrenamtlicher Tätigkeit, Ausstellungsorganisation, Frappant e.V.,  bis 2022
 
-Ehrenamtliche Tätigkeit, IT Workshops, Hacker Schools GmbH
+Beginn Ehrenamtlicher Tätigkeit, Jugend IT Workshops, Hacker Schools GmbH, bis 2020
 
-Festanstellung, Softwareentwicklung, yesdevs GmbH
+Beginn Festanstellung, Softwareentwicklung, yesdevs GmbH, bis 2023
 
 ## 2020
 "Backstage", Teilnahme und Lesung, Deutsches Schauspielhaus Hamburg
 
 "Festival für Selbstgebaute Musik", Performance
 
-"Acid At The Mall", Musikproduktion, Live Performances, siehe https://acidatm.de/
+"Acid At The Mall", Musikproduktion, Live Performances, seit 2020
 
-"rc3", Performance, CCC/MS Stubnitz
+"rc3", Performance, Chaos Computer Congress / MS Stubnitz
 
 App Entwicklung für Zellerfeld GmbH, bis 2023
 
-Freiberuflicher Fahrer, uA für Mookwe GmbH
+Freiberuflicher Fahrer, u.A. für Mookwe GmbH, seit 2020
 
 ## 2021
 "Backstage", Teilnahme und Lesung, Deutsches Schauspielhaus Hamburg
 
-Studium, Bildende Kunst, HfbK Hamburg
+Beginn Studium, Bildende Kunst, HfbK Hamburg
 
 ## 2022
 "Limit Erreicht", Performance, Deutsches Schauspielhaus
@@ -62,7 +54,7 @@ Studium, Bildende Kunst, HfbK Hamburg
 
 "BLUR", Gruppenausstellung, Frappant Galerie
 
-Ehrenamtliche Tätigkeit, Veranstaltungsdurchführung, Kachelraum
+Beginn Ehrenamtlicher Tätigkeit, Veranstaltungsdurchführung, Frappant e.V.
 
 "RAWR", Gründung und Betrieb eines Musiklabels
 
@@ -73,6 +65,6 @@ Ehrenamtliche Tätigkeit, Veranstaltungsdurchführung, Kachelraum
 
 "varietyroom", Organisation einer offenen Performance Bühne an der HfbK
 
-"Off Klasse", Mitbegründung einer unabhängigen Klasse an der HfbK
+Technische Assistenz (AV Media), "50 Jahre Sesamstrasse", Museum für Kunst und Gewerbe
 
 Freiberuflicher Fahrer für BDriven GmbH

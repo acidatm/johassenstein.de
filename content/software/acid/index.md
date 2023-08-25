@@ -6,11 +6,14 @@ description: ACID is short for Algorithms Create Image Data and is a general pur
 tags: [software]
 cat: Video Synthesizer, Programming Language
 relatedLinks: ["https://github.com/acidatm/acid","https://acidatm.itch.io/acid"]
+relatedWorks: ["software/tram"]
 ---
 {{<img acid-1>}}
 
 {{<img acid-2>}}
 
 {{<img acid-3>}}
+
+ACID was my first try at creating a standalone desktop software. I really got into feedback based video synthesis and tried replicating that with software. I am currently rewriting ACID to use the same single character based programming language approach as TRAM.
 
 {{<youtube u_rGDhfu_Qk>}}

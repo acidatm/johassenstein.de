@@ -3,14 +3,18 @@ title: Ralf Ziervogel
 date: 2021-06-01
 time: 2021-2023
 tags: [software]
-description: Single-Page Website für das Gesamtwerk von Ralf Ziervogel. PHP basiertes CMS, custom GIMP script, python render pipe, leaflet.js on website.
+description: Single-Page Website for the life's work of German artist Ralf Ziervogel. PHP based CMS, custom GIMP script, python render pipeline, leaflet.js rendering on a static website.
 cat: Website, CMS, Rendering Pipeline
 relatedLinks: ["https://ralfziervogel.com"]
 ---
 {{< img razivo-0>}}
 
-{{< img razivo-3>}}
-
 {{< img razivo-1>}}
 
 {{< img razivo-2>}}
+
+The work of Ralf Ziervogel is large in size but also very detailed. He wanted a website which could show both sides of his work simultaneously. My approach was to abuse leaflet.js, an open source tiling engine originally meant to render street maps, to show his work on original size and resolution while also allowing an overview over the entire body of work.
+
+{{< img razivo-3>}}
+
+To create the needed sliced tiles from his work I wrote a custom GIMP scripts which would translate the layouts made in a custom PHP based CMS into a single file which is then sliced with a python based command line tool.

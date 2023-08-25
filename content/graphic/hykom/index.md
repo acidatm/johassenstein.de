@@ -47,8 +47,11 @@ The font is used in various designs such as posters, flyers and signs. The font 
 The font comes with upper- and lowercase letters, numbers 0-9 and characters for "." and ",". Letters come in two weights, where bold has a higher number of black pixels.
 
 {{< img font1>}}
+
 {{< img font2>}}
+
 {{< img font3>}}
+
 {{< img font4>}}
 
 My main goal was to create a font that looked like some form of code or cryptic message and that had no rules, no way to decrypt it except for knowing which character is which. I tried to embody the hidden, meaningless, ever changing rules and systems of capitalism and consumerism that are also part of the stage design in this font.

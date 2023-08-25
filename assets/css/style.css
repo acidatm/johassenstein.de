@@ -194,6 +194,10 @@ img,video{
 .single_related a{
   text-decoration: underline;
 }
+.single_related_links,
+.single_related_works{
+  width: 50%;
+}
 .topic{
   margin-bottom: 3rem; /*1*/
 }
@@ -353,6 +357,10 @@ img,video{
   }
   .single_related_links{
     margin-top: 1rem;
+  }
+  .single_related_links,
+  .single_related_works{
+    width: 100%;
   }
   .cv h2{
     left: 2rem;

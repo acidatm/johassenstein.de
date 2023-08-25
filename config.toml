@@ -9,4 +9,4 @@ timeout = 120000
 [taxonomies]
 tag = "tags"
 [params]
-description = "Test"
+description = "I create interactive spaces with love and code"
