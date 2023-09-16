@@ -11,14 +11,14 @@ const INDEX_TOPICS = [
     description: '"HYKOM"\n\nstagedesign, sound, graphics and\ncustom font for a play at the\nDeutsches Schauspielhaus Hamburg\n2022',
     link: '/graphic/hykom/',
   },
-  {
-    image: 'xeroxpark',
-    color: '#ffffff',
-    description: '"Xerox Park"\n\nacid techno ep,\ntaperelease with\nriso printed jcards\n2023',
-    link: '/music/xeroxpark/',
-  }
+  // {
+  //   image: 'xeroxpark',
+  //   color: '#ffffff',
+  //   description: '"Xerox Park"\n\nacid techno ep,\ntaperelease with\nriso printed jcards\n2023',
+  //   link: '/music/xeroxpark/',
+  // }
 ]
-let N = 2
+let N = 1
 let INIT = false
 
 window.addEventListener('DOMContentLoaded',function(){
