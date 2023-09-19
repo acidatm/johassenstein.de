@@ -11,12 +11,12 @@ const INDEX_TOPICS = [
     description: '"HYKOM"\n\nstagedesign, sound, graphics and\ncustom font for a play at the\nDeutsches Schauspielhaus Hamburg\n2022',
     link: '/graphic/hykom/',
   },
-  // {
-  //   image: 'xeroxpark',
-  //   color: '#ffffff',
-  //   description: '"Xerox Park"\n\nacid techno ep,\ntaperelease with\nriso printed jcards\n2023',
-  //   link: '/music/xeroxpark/',
-  // }
+  {
+    image: 'comic',
+    color: '#ffffff',
+    description: '"Es Rieselt Laut"\n\screen printed comic\nand christmas card\nwith typewriten poem\n2022',
+    link: '/graphic/es-rieselt-laut/',
+  }
 ]
 let N = 1
 let INIT = false
@@ -35,12 +35,15 @@ function unset(e){
 
 function initIndex(){
   let index = document.getElementById("index")
-  let link = document.getElementById("indexDescription")
+  let links = [].slice.call(document.getElementsByTagName("A"))
   if(index){
     index.addEventListener("click",randomIndexTopic)
-    link.addEventListener("click",function(e){
-      e.stopPropagation()
-    })
+    for(let l in links){
+      let link = links[l]
+      link.addEventListener("click",function(e){
+        e.stopPropagation()
+      })
+    }
     randomIndexTopic()
   }
 }

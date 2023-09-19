@@ -143,7 +143,7 @@ img,video{
 }
 .index_list{
   height: 100%;
-  width: calc(8 * 22vw);
+  width: calc(7.5 * 22vw);
   overflow: hidden;
   overflow-x: auto;
   margin-left: 8rem;
@@ -294,8 +294,9 @@ img,video{
   bottom: 14rem;
   top: auto;
 }
-#indexDescription{
-  display: block;
+.topic-hykom main{
+  bottom: 14rem;
+  top: auto;
 }
 @media (max-width: 1000px){
   #index{

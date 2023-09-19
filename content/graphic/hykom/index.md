@@ -10,35 +10,11 @@ relatedLinks: ["https://github.com/acidatm/hykom"]
 
 {{< img 1AS>}}
 
-{{< img 1AW>}}
-
-{{< img 1BS>}}
-
-{{< img 1BW>}}
-
-{{< img 2AS>}}
-
 {{< img 2AW>}}
-
-{{< img 2BS>}}
-
-{{< img 2BW>}}
 
 {{< img 3AS>}}
 
-{{< img 3AW>}}
-
-{{< img 3BS>}}
-
-{{< img 3BW>}}
-
-{{< img 4AS>}}
-
 {{< img 4AW>}}
-
-{{< img 4BS>}}
-
-{{< img 4BW>}}
 
 HYKOM is a concept font that I designed for the stage design of a staging of the play "Hysterikon" by Ingrid Lausund that happened on the 30th June 2022 at the Deutsches Schauspielhaus Hamburg.
 
