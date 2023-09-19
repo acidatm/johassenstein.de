@@ -18,7 +18,7 @@ const INDEX_TOPICS = [
     link: '/graphic/es-rieselt-laut/',
   }
 ]
-let N = 1
+let N = 2
 let INIT = false
 
 window.addEventListener('DOMContentLoaded',function(){
