@@ -5,7 +5,7 @@ time: 2021
 cat: Album, Graphic, Cover, Videoloop, SVG Animation
 tags: [graphic,music]
 relatedLinks: ["https://johassenstein.de/german-angst-graphic"]
-relatedWorks: []
+relatedWorks: ["hardware/fahrplan"]
 ---
 {{<img german-angst>}}
 
@@ -13,6 +13,6 @@ For my German Angst album I created a cover that embodied the heavy theme of min
 
 {{<video video>}}
 
-The album contains 8 recordings I did during the first lockdown winter, where I started building my own modular synthesizer, all of the tracks you hear on the album are sequenced by the
+The album contains 8 recordings I did during the first lockdown winter, where I started building my own modular synthesizer, all of the tracks you hear on the album are sequenced by the "Fahrplan" sequencer.
 
 {{<soundcloud "https%3A//api.soundcloud.com/playlists/1477470742" >}}

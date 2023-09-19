@@ -4,7 +4,7 @@ date: 2022-01-13
 time: 2022
 tags: [music,graphic]
 cat: EP
-description: Fast drums-only Techno EP with sampled real life strobe effects for as Spotify canvas videos
+description: Fast drums-only Techno EP with sampled real life strobe effects as Spotify canvas videos
 ---
 
 

@@ -23,7 +23,7 @@ let INIT = false
 
 window.addEventListener('DOMContentLoaded',function(){
   initImages()
-  initVideos()
+  // initVideos()
   initIndex()
 });
 
