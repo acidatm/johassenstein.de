@@ -3,8 +3,9 @@ title: German Angst
 date: 2021-09-05
 time: 2021
 cat: Album, Graphic, Cover, Videoloop, SVG Animation
+description: Uncut recordings of early experiments on my self build modular system for which I created an interactive SVG for a cover
 tags: [graphic,music]
-relatedLinks: ["https://johassenstein.de/german-angst-graphic"]
+relatedLinks: ["https://johassenstein.de/german-angst.html"]
 relatedWorks: ["hardware/fahrplan"]
 ---
 {{<img german-angst>}}

@@ -22,4 +22,10 @@ The installation uses TRAM running on a Raspberry Pi, a keyboard with some keys 
 
 The programming language is the first of my tries to create programming languages that can be explored rather then learned. Every character does something and there is no "wrong" syntax. This results in everybody being able to immedeatly do something without a need for understanding the actual underlying rules of the language.
 
+The name came from when I first had the idea to create a sampler that would interprete special characters (like in abstract poems such as Fisches Nachtgesang) as beats. I had that idea in the Tram, hence the name.
+
+{{<img old1>}}
+
+{{<img old2>}}
+
 {{<youtube 8zXlJ8rf_9g>}}

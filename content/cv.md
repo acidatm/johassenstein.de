@@ -47,6 +47,8 @@ Freiberuflicher Fahrer, u.A. für Mookwe GmbH, seit 2020
 
 Beginn Studium, Bildende Kunst, HfbK Hamburg
 
+dervierteraum.org, Entwicklung, Organisation und Betrieb einer	digitalen Galerie, 	Frappant e.V., seit 2021
+
 ## 2022
 "Limit Erreicht", Performance, Deutsches Schauspielhaus
 

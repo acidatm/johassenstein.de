@@ -14,6 +14,12 @@ relatedWorks: ["software/tram"]
 
 {{<img acid-3>}}
 
-ACID was my first try at creating a standalone desktop software. I really got into feedback based video synthesis and tried replicating that with software. I am currently rewriting ACID to use the same single character based programming language approach as TRAM.
-
 {{<youtube u_rGDhfu_Qk>}}
+
+ACID was my first try at creating a standalone desktop software. I really got into feedback based video synthesis and tried replicating that with software.
+
+{{<img old>}}
+
+I am currently rewriting ACID to use the same single character based programming language approach as TRAM.
+
+{{<img new>}}

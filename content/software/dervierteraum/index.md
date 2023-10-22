@@ -3,7 +3,7 @@ title: Der Vierte Raum
 date: 2021-12-15
 time: 2021-Ongoing
 tags: [software]
-description: Virtual exhibition space for Frappant e.V. inspired by Gybsons 'Neuromancer'
+description: Virtual exhibition space for Frappant e.V. inspired by Gibsons 'Neuromancer'
 cat: Website, Exhibiton Space
 relatedLinks: ["https://dervierteraum.org"]
 ---
