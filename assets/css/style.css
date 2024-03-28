@@ -407,4 +407,8 @@ img,video{
     bottom: 15vh;
     top: auto;
   }
+  .topic-process main{
+    bottom: 15vh;
+    top: auto;
+  }
 }

@@ -6,6 +6,12 @@ const INDEX_TOPICS = [
     link: '/software/tram',
   },
   {
+    image: 'process',
+    color: '#ffffff',
+    description: '"Untitled Process"\n\series of 3D printed clay sculptures\nthat evolved from the errors in\nreproducing an original object\n2023',
+    link: '/hardware/untitled-process/',
+  },
+  {
     image: 'hykom',
     color: '#ffffff',
     description: '"HYKOM"\n\nstagedesign, sound, graphics and\ncustom font for a play at the\nDeutsches Schauspielhaus Hamburg\n2022',
@@ -18,7 +24,7 @@ const INDEX_TOPICS = [
     link: '/graphic/es-rieselt-laut/',
   }
 ]
-let N = 2
+let N = 3
 let INIT = false
 
 window.addEventListener('DOMContentLoaded',function(){

@@ -65,8 +65,19 @@ Beginn Ehrenamtlicher Tätigkeit, Veranstaltungsdurchführung, Frappant e.V.
 
 "I wish I was a mole in the Ground", Performance, Ernst Deutsch Theater
 
-"varietyroom", Organisation einer offenen Performance Bühne an der HfbK
+"varietyroom", Organisation einer offenen Performance Bühne, HFBK Hamburg
 
 Technische Assistenz (AV Media), "50 Jahre Sesamstrasse", Museum für Kunst und Gewerbe
 
 Freiberuflicher Fahrer für BDriven GmbH
+
+
+
+## 2024
+
+Driver/Buyer, Ausstattungsassistenz, Sky Italia Produktion
+
+"Untitled Process", Jahresausstellung, HFBK Hamburg
+
+"What's your favourite dinosaur?", Performance, Resonant Realities Exhibition Sehsüchte 2024, Potsdam
+
