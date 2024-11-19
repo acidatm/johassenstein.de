@@ -4,80 +4,60 @@ type: cv
 description:
 ---
 ## 2016
-Auslandsaufenthalt, Neuseeland
+Exchange, New Zealand
 
-## 2017
-"Bundeswettbewerb Philosophischer Essay", Teilnahme, 3. Platz
-
+---
 ## 2018
-"Jugend Präsentiert", Finalteilnahme
-
-Beginn Freiberufliche Tätigkeit als Softwareentwickler, seit 2018
+Self-employment as software developer since 2018
 
 Abitur, Matthias Claudius Gymnasium Hamburg
 
-Beginn Studium,"Mensch Computer Interaktion", Universität Hamburg, bis 2019
+Started studying "Human Computer Interaction" at Universität Hamburg until 2019
 
+---
 ## 2019
-"Backstage", Teilnahme und Lesung, Deutsches Schauspielhaus Hamburg
+Writing, music and performance at Deutsches Schauspielhaus, until 2023
 
-"ABC*-Festival", Veranstaltung und Organisation
+Voluntary work at gallery of Frappant e.V. until 2022
 
-Beginn Ehrenamtlicher Tätigkeit, Ausstellungsorganisation, Frappant e.V.,  bis 2022
+Voluntary work organising youth IT workshops for Hacker Schools GmbH, until 2020
 
-Beginn Ehrenamtlicher Tätigkeit, Jugend IT Workshops, Hacker Schools GmbH, bis 2020
+Employed as a web developer at yesdevs GmbH, until 2023
 
-Beginn Festanstellung, Softwareentwicklung, yesdevs GmbH, bis 2023
-
+---
 ## 2020
-"Backstage", Teilnahme und Lesung, Deutsches Schauspielhaus Hamburg
+Performance at Festival für Selbstgebaute Musik, Berlin
 
-"Festival für Selbstgebaute Musik", Performance
+Performance at Chaos Computer Congress
 
-"Acid At The Mall", Musikproduktion, Live Performances, seit 2020
+Worked as an iOS developer for Zellerfeld R&D GmbH until 2023
 
-"rc3", Performance, Chaos Computer Congress / MS Stubnitz
+Self-employed production driver since 2020
 
-App Entwicklung für Zellerfeld GmbH, bis 2023
-
-Freiberuflicher Fahrer, u.A. für Mookwe GmbH, seit 2020
-
+---
 ## 2021
-"Backstage", Teilnahme und Lesung, Deutsches Schauspielhaus Hamburg
+Started studying fine arts at HFBK Hamburg, since 2021
 
-Beginn Studium, Bildende Kunst, HfbK Hamburg
-
-dervierteraum.org, Entwicklung, Organisation und Betrieb einer	digitalen Galerie, 	Frappant e.V., seit 2021
-
+---
 ## 2022
-"Limit Erreicht", Performance, Deutsches Schauspielhaus
+Stagedesign at Deutsches Schauspielhaus
 
-"Altona Macht Auf", Teilnahme
+Group exhibition at Frappant Gallery
 
-"BLUR", Gruppenausstellung, Frappant Galerie
+Voluntary work running a live music venue for Frappant e.V., since 2022
 
-Beginn Ehrenamtlicher Tätigkeit, Veranstaltungsdurchführung, Frappant e.V.
-
-"RAWR", Gründung und Betrieb eines Musiklabels
-
+---
 ## 2023
-"Kabale", Einreichung, Heidelberger Stückemarkt
+Submission to Heidelberger Stückemarkt
 
-"I wish I was a mole in the Ground", Performance, Ernst Deutsch Theater
+Performance at Ernst Deutsch Theater, Hamburg
 
-"varietyroom", Organisation einer offenen Performance Bühne, HFBK Hamburg
+Technical Assistance at Museum für Kunst und Gewerbe
 
-Technische Assistenz (AV Media), "50 Jahre Sesamstrasse", Museum für Kunst und Gewerbe
+Self-employed driver for BDriven GmbH during Formula 1 at Bridgestone Circuit
 
-Freiberuflicher Fahrer für BDriven GmbH
-
-
-
+---
 ## 2024
+Self-employed driver/buyer and scenography assistance for Sky Italia
 
-Driver/Buyer, Ausstattungsassistenz, Sky Italia Produktion
-
-"Untitled Process", Jahresausstellung, HFBK Hamburg
-
-"What's your favourite dinosaur?", Performance, Resonant Realities Exhibition Sehsüchte 2024, Potsdam
-
+Performance at Resonant Realities Exhibition Sehsüchte 2024 in Potsdam

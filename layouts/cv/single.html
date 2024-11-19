@@ -5,21 +5,8 @@
   </head>
   <body class="cv">
     {{ partial "header.html" . }}
-    <main class="list_container">
-      <div class="single_container">
-        <div class="single_header">
-          <h4 class="single_title">
-            {{.Title}}
-          </h4>
-          <div class="single_description">
-            {{.Description}}
-          </div>
-        </div>
-
-        <div class="single_content">
-          {{.Content}}
-        </div>
-      </div>
+    <main>
+      {{.Content}}
     </main>
     {{ partial "footer.html" . }}
   </body>

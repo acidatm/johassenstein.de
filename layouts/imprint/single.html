@@ -5,17 +5,8 @@
   </head>
   <body class="imprint">
     {{ partial "header.html" . }}
-    <main class="list_container">
-      <div class="single_container">
-        <div class="single_header">
-          <h4 class="single_title">
-            {{.Title}}
-          </h4>
-        </div>
-        <div class="single_content">
+    <main>
           {{.Content}}
-        </div>
-      </div>
     </main>
     {{ partial "footer.html" . }}
   </body>

@@ -28,9 +28,10 @@ let N = 3
 let INIT = false
 
 window.addEventListener('DOMContentLoaded',function(){
-  initImages()
+  let index = false
+  index ? initIndex() : initImages()
   // initVideos()
-  initIndex()
+
 });
 
 function unset(e){
@@ -40,18 +41,31 @@ function unset(e){
 }
 
 function initIndex(){
-  let index = document.getElementById("index")
-  let links = [].slice.call(document.getElementsByTagName("A"))
-  if(index){
-    index.addEventListener("click",randomIndexTopic)
-    for(let l in links){
-      let link = links[l]
-      link.addEventListener("click",function(e){
-        e.stopPropagation()
-      })
+    const images = [].slice.call(document.getElementsByTagName("img"))
+    function getSrc(img,full){
+      let bg = img.getAttribute("data-thumbnail")
+      let src
+      let cap = full ? window.innerWidth : 1080
+      let srcset = {
+        640: "mobile",
+        768: "square",
+        1080: "desktop"
+      }
+      let wset = Object.keys(srcset).sort((a, b) => a - b)
+      for(let w in wset){
+        if(cap < wset[w] && !src){
+          src = srcset[wset[w]]
+        }
+      }
+      if(!src){
+        src = srcset[wset[wset.length - 1]]
+      }
+      return src
     }
-    randomIndexTopic()
-  }
+    for(let i in images){
+      let img = images[i]
+        img.src = img.getAttribute("data-src") + getSrc(img) + ".jpg"
+    }
 }
 
 function randomIndexTopic(){
@@ -124,7 +138,7 @@ function initVideos(){
 
 function initImages(){
   const images = [].slice.call(document.getElementsByClassName("image"))
-  const display = document.getElementById("display")
+  // const display = document.getElementById("display")
   display.addEventListener("click",unset)
 
   function set(img,full){

@@ -6,8 +6,18 @@
   <body id="index" class="index">
     {{ partial "header.html" . }}
     <main class="index_container">
-      <a title="more about this work" id="indexDescription"></a><br><br><br><br>
-      <a title="more about this work" id="indexLink"></a>
+      {{ range (where site.Pages "Params.type" "work")}}
+        {{$slug := .RelPermalink}}
+        {{$title := .Title}}
+        {{$link := .Permalink}}
+        {{$flag := false}}
+        {{ range .Params.index }}
+        <a href="{{$link}}" title="{{$title}}">
+          <img {{if eq $flag false}}id="{{$title | urlize}}"{{end}} src="./index{{$slug}}{{.}}.jpg">
+        </a>
+        {{$flag = true}}
+        {{ end }}
+      {{end}}
     </main>
     {{ partial "footer.html" . }}
   </body>

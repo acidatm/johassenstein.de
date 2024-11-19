@@ -1,56 +1,12 @@
-/* @font-face {
-  font-family: "Space Mono";
+
+@font-face {
+  font-family: "Arial";
   font-weight: 400;
-  src: url("/fonts/SpaceMono-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JB";
-  font-weight: 400;
-  src: url("/fonts/JetBrainsMono-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JB";
-  font-weight: 700;
-  src: url("/fonts/JetBrainsMono-Bold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Roboto";
-  font-weight: 400;
-  src: url("/fonts/RobotoMono-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Roboto";
-  font-weight: 700;
-  src: url("/fonts/RobotoMono-Bold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Source";
-  font-weight: 400;
-  src: url("/fonts/SourceCodePro-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Source";
-  font-weight: 700;
-  src: url("/fonts/SourceCodePro-Bold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "PT";
-  font-weight: 400;
-  src: url("/fonts/PTMono-Regular.ttf") format("truetype");
-} */
-@font-face {
-  font-family: "IBM";
-  font-weight: 400;
-  src: url("/fonts/IBMPlexMono-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "IBM";
-  font-weight: 700;
-  src: url("/fonts/IBMPlexMono-Bold.ttf") format("truetype");
+  src: url("/fonts/Arial.woff") format('woff');
 }
 
 *{
-  font-family: "IBM";
+  font-family: "Arial";
   font-weight: 400;
   user-select: none;
   -webkit-user-select:none;
@@ -62,7 +18,7 @@
   border-style: hidden;
   font-size: 18px;
   line-height: 1.3em;
-  te
+  text-transform: lowercase;
 }
 @media (max-height: 900px){
   *{
@@ -78,9 +34,6 @@
   *{
     font-size: 12px;
   }
-}
-h1,h2,h3,h4,h5,h6{
-  font-weight: bold;
 }
 body,html{
   background: #eeeeee;
@@ -109,127 +62,117 @@ img,video{
 }
 .header{
   position: fixed;
-  left: 8rem;
-  top: 8rem;
-  width: calc(100% - 12rem);
+  left: 0;
+  top: 0;
+  padding: 1rem;
+  width: calc(100% - 2rem);
+  background: #eeeeee;
+  z-index: 2;
 }
 .footer{
   position: fixed;
-  left: 8rem;
-  bottom: 4rem;
-  width: calc(100% - 12rem);
+  left: 0;
+  bottom: 0;
+  padding: 1rem;
+  width: calc(100% - 2rem);
+  background: #eeeeee;
 }
-#index{
-  background-image: url("/index/dino_desktop_lores.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 100vh;
+.header a,
+.footer a{
+  z-index: 10;
+  position: relative;
 }
-.index h1{
-  font-weight: 400;
+.cv main,
+.imprint main{
+  padding: 4rem 1rem 33vh 1rem;
+  max-width: 480px;
+}
+.cv h2{
+  position: absolute;
+  left: 1rem;
+}
+.cv p{
+  margin-left: 4rem;
+  margin-bottom: 0.1rem;
+}
+.cv hr,
+.imprint hr{
+  height: 1rem;
+  opacity: 0;
 }
 .index main{
-  margin-left: 8rem;
-}
-.index_container{
   position: fixed;
-  top: 14rem;
-  height: calc(100% - 20rem);
-  left: 0;
-  overflow: hidden;
-  overflow-x: auto;
-  width: 100%;
-}
-.index_list{
-  height: 100%;
-  width: calc(7.5 * 22vw);
-  overflow: hidden;
-  overflow-x: auto;
-  margin-left: 8rem;
-  display: flex;
-}
-.index_list_item{
-  width: 20vw;
-  margin-right: 1rem;
-  display: inline-block;
-  height: 100%;
-  overflow: hidden;
-  overflow-y: auto;
-}
-.list_menu{
-  position: fixed;
-  width: 20vw;
-  top: 14rem;
-  left: 8rem;
-  height: calc(100% - 22rem);
-  overflow: hidden;
-  overflow-y: auto;
-}
-.single_container{
-  position: fixed;
-  width: calc(70vw - 20rem);
-  right: 12rem;
-  bottom: 0;
   top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  overflow-y: auto;
-  padding-top: 8rem;
-  padding-bottom: 8rem;
+  overflow-x: scroll;
+  display: flex;
+  font-size: 0;
 }
-.single_time{
-  font-style: italic;
-  font-weight: bold;
+.index main img{
+  height: 100%;
+  width: auto;
+    image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+    image-rendering: -moz-crisp-edges;          /* Firefox                        */
+    image-rendering: -o-crisp-edges;            /* Opera                          */
+    image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+    image-rendering: pixelated;                 /* Universal support since 2021   */
+    image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+    -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+
 }
-.single_description,
-.single_cat{
-  font-style: italic;
+.index main a:first-of-type{
+  margin-left: 33vw;
+}
+.index main a:last-of-type{
+  margin-right: 33vw;
+}
+.index main a{
+  padding: 0;
+  margin: 0;
+  font-size: 0;
+}
+.index .header,
+.index .footer{
+  background-color: transparent;
+}
+.single main{
+  margin-top: 3rem;
+  margin-bottom: 33vh;
+}
+.single p:nth-of-type(2n){
+  grid-column-start: 2;
+  font-size: 0;
+  z-index: 2;
+}
+.single p:nth-of-type(2n+1){
+  padding: 0 3rem 3rem 3rem;
+  grid-column-start: 1;
 }
 .single_header{
-  margin-bottom: 5rem;
-}
-.single_content p,
-.single_content img,
-.single_content video,
-.single_content iframe{
-  margin-bottom: 2rem;
-}
-.single .single_content p,
-.single_description
-{
-  max-width: 30vw;
-}
-.single .single_content p{
-  margin-left: 4rem;
+  position: fixed;
+  top: 3rem;
+  left: 1rem;
+  max-width: 240px;
 }
 .single_related{
-  margin-top: 3rem;
-  display: flex;
-  justify-content: space-between;
+  position: fixed;
+  bottom: 6rem;
+  left: 1rem;
+  width: 33vw;
 }
-.single_related li{
+.single_related_links li{
   display: block;
-}
-.single_related a{
   text-decoration: underline;
 }
-.single_related_links,
-.single_related_works{
-  width: 50%;
-}
-.topic{
-  margin-bottom: 1rem; /*1*/
-}
-.topic_container{
-  margin: 1.5rem 0;
-}
-.topic_container .topic{
-  margin: 0;
-}
-.topic_list_item,
-.list_menu_item{
-  display: block;
-  margin-bottom: 1.5rem; /*0.5*/
+.single_content{
+  display: grid;
+  grid-template: auto / 30% 70%;
+  grid-gap: 0;
+  width: 66vw;
+  margin-left: 34vw;
 }
 #display{
   position: fixed;
@@ -253,162 +196,51 @@ img,video{
 .video-active #video{
   opacity: 1;
 }
-.nopad{
-  padding: 0 !important;
-  margin: 0 !important;
-}
-.cv h2{
-  position: absolute;
-  left: 0;
-}
-.cv .single_content p{
-  margin-left: 4rem;
-}
-#video{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1000;
-  opacity: 0;
-  pointer-events: none;
-}
-.video-active #video{
-  opacity: 1;
-}
-
-.index main{
-  position: fixed;
-  left: 8rem;
-  margin-left: 0;
-  height: auto;
-}
-.topic-dino main{
-  top: 14rem;
-}
-.topic-xeroxpark main{
-  top: 14rem;
-}
-.topic-hykom main{
-  bottom: 14rem;
-  top: auto;
-}
-.topic-hykom main{
-  bottom: 14rem;
-  top: auto;
-}
-@media (max-width: 1000px){
-  #index{
-    background-image: url("/index/dino_mobile_lores.jpg");
-  }
-  .header{
-    left: 0;
-    top: 0;
-    padding: 2rem;
-    width: calc(100% - 4rem);
-    background: #eeeeee;
-    z-index: 10000;
-  }
-  .footer{
-    left: 0;
-    bottom: 0;
-    padding: 2rem;
-    width: calc(100% - 4rem);
-    background: #eeeeee;
-    z-index: 10000;
-  }
-  main{
-    width: calc(100% - 4rem);
-    padding: 14rem 2rem;
-  }
-  .index_container{
-    position: inherit;
-    height: auto;
-    width: auto;
-    overflow: visible;
-  }
-  .index_list{
-    height: auto;
-    width: auto;
-    overflow: visible;
-    margin-left: 0;
-    display: inline-block;
-  }
-  .index_list_item{
-    width: auto;
-    margin-right: 0;
+@media (max-aspect-ratio: 1/1) {
+  .index main{
+    overflow-y: scroll;
+    overflow-x: hidden;
     display: block;
-    margin-bottom: 5rem;
   }
-  .list_menu{
-    position: inherit;
-    width: auto;
+  .index main img{
     height: auto;
-    overflow: visible;
-  }
-  .single_container{
-    position: inherit;
-    width: auto;
-    overflow: visible;
-    padding: 0;
-    padding-bottom: 8rem;
-  }
-  .single main{
-    padding-left: 0;
-    padding-right: 0;
     width: 100%;
   }
-  .single .single_header,
-  .single .list_menu,
-  .single .single_content p,
-  .single .single_related{
-    padding: 0 2rem;
-    width: calc(100% - 4rem);
-    max-width: none;
+  .index main a:first-of-type{
     margin-left: 0;
   }
-  .single .single_description{
+  .index main a:last-of-type{
+    margin-right: 0;
+  }
+  .index main a:first-of-type img{
+    margin-top: 20vh;
+  }
+  .index main a:last-of-type img{
+    margin-bottom: 20vh;
+  }
+
+  .single p:nth-of-type(2n){
+    font-size: 0;
+    z-index: 1;
+  }
+  .single p:nth-of-type(2n+1){
+    padding: 1rem;
+  }
+  .single_header{
+    position: inherit;
+    padding: 0 1rem;
     max-width: none;
-    margin-left: 0;
+    margin-bottom: 6rem;
   }
   .single_related{
+    position: inherit;
+    padding: 0 1rem;
+    margin-top: 6rem;
+    width: calc(100% - 2rem);
+  }
+  .single_content{
     display: block;
-  }
-  .single_related_links{
-    margin-top: 1rem;
-  }
-  .single_related_links,
-  .single_related_works{
     width: 100%;
-  }
-  .cv h2{
-    left: 2rem;
-  }
-  .index .header,
-  .index .footer{
-    background: transparent;
-  }
-  h1{
-    font-weight: 400;
-  }
-  .index main{
-    margin-left: 0rem;
-    left: 2rem;
-    padding: 0;
-  }
-  .topic-dino main{
-    top: 40vh;
-  }
-  .topic-xeroxpark main{
-    top: 40vh;
-  }
-  .topic-hykom main{
-    bottom: 15vh;
-    top: auto;
-  }
-  .topic-process main{
-    bottom: 15vh;
-    top: auto;
+    margin-left: 0;
   }
 }
