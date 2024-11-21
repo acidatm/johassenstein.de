@@ -100,18 +100,18 @@ img,video{
   height: 1rem;
   opacity: 0;
 }
-.index main{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+body.index{
+  overflow-y: hidden;
   overflow-x: scroll;
+}
+.index main{
+  width: auto;
+  height: 100vh;
   display: flex;
   font-size: 0;
 }
-.index main img{
+.index main img,
+.index main video{
   height: 100%;
   width: auto;
     image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
@@ -124,10 +124,10 @@ img,video{
 
 }
 .index main a:first-of-type{
-  margin-left: 33vw;
+  padding-left: 33vw;
 }
 .index main a:last-of-type{
-  margin-right: 33vw;
+  padding-right: 33vw;
 }
 .index main a{
   padding: 0;
@@ -196,29 +196,7 @@ img,video{
 .video-active #video{
   opacity: 1;
 }
-@media (max-aspect-ratio: 1/1) {
-  .index main{
-    overflow-y: scroll;
-    overflow-x: hidden;
-    display: block;
-  }
-  .index main img{
-    height: auto;
-    width: 100%;
-  }
-  .index main a:first-of-type{
-    margin-left: 0;
-  }
-  .index main a:last-of-type{
-    margin-right: 0;
-  }
-  .index main a:first-of-type img{
-    margin-top: 20vh;
-  }
-  .index main a:last-of-type img{
-    margin-bottom: 20vh;
-  }
-
+@media (max-width: 900px){
   .single p:nth-of-type(2n){
     font-size: 0;
     z-index: 1;
@@ -242,5 +220,32 @@ img,video{
     display: block;
     width: 100%;
     margin-left: 0;
+  }
+}
+@media (max-aspect-ratio: 1/1) {
+  body.index{
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .index main{
+    width: 100vw;
+    height: auto;
+    display: block;
+  }
+  .index main img{
+    height: auto;
+    width: 100%;
+  }
+  .index main a:first-of-type{
+    padding-left: 0;
+  }
+  .index main a:last-of-type{
+    padding-right: 0;
+  }
+  .index main a:first-of-type img{
+    padding-top: 20vh;
+  }
+  .index main a:last-of-type img{
+    padding-bottom: 20vh;
   }
 }

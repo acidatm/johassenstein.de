@@ -6,18 +6,148 @@
   <body id="index" class="index">
     {{ partial "header.html" . }}
     <main class="index_container">
-      {{ range (where site.Pages "Params.type" "work")}}
-        {{$slug := .RelPermalink}}
-        {{$title := .Title}}
-        {{$link := .Permalink}}
-        {{$flag := false}}
-        {{ range .Params.index }}
-        <a href="{{$link}}" title="{{$title}}">
-          <img {{if eq $flag false}}id="{{$title | urlize}}"{{end}} src="./index{{$slug}}{{.}}.jpg">
+
+
+
+
+
+
+
+
+
+        <a href="./untitled-process/" title="Untitled Process">
+          <img id="untitled-process" src="./index/untitled-process/1.jpg">
         </a>
-        {{$flag = true}}
-        {{ end }}
-      {{end}}
+
+
+
+
+
+
+
+
+
+
+
+        <a href="./tram/" title="TRAM">
+          <img id="tram" src="./index/tram/1.jpg">
+        </a>
+
+
+
+
+        <a href="./tram/" title="TRAM">
+          <img src="./index/tram/2.jpg">
+        </a>
+
+
+
+
+        <a href="./tram/" title="TRAM">
+            <video src="./index/tram/3.mp4" poster="./index/tram/poster3.jpg" autoplay muted loop>
+        </a>
+
+
+
+
+
+
+
+
+
+
+
+        <a href="./hykom/" title="HYKOM">
+          <img id="hykom" src="./index/hykom/1.jpg">
+        </a>
+
+
+
+
+        <a href="./hykom/" title="HYKOM">
+          <img src="./index/hykom/2.jpg">
+        </a>
+
+
+
+
+
+
+
+
+
+
+
+        <a href="./dervierteraum/" title="Der Vierte Raum">
+          <img id="der-vierte-raum" src="./index/dervierteraum/1.jpg">
+        </a>
+
+
+
+
+
+
+
+
+
+
+
+        <a href="./musicforbots/" title="Music For Bots">
+          <img id="music-for-bots" src="./index/musicforbots/1.jpg">
+        </a>
+
+
+
+
+
+
+
+
+
+
+
+        <a href="./razivo/" title="Ralf Ziervogel">
+          <video id="ralf-ziervogel" src="./index/razivo/1.mp4" poster="./index/razivo/poster1.jpg" autoplay muted loop>
+        </a>
+
+
+
+
+
+
+
+
+
+
+
+        <a href="./acid/" title="ACID">
+          <img id="acid" src="./index/acid/1.jpg">
+        </a>
+
+
+
+
+        <a href="./acid/" title="ACID">
+          <img src="./index/acid/2.jpg">
+        </a>
+
+
+
+
+
+
+
+
+
+
+
+        <a href="./vonhiernachda/" title="Von Hier nach Da">
+          <video id="von-hier-nach-da" src="./index/vonhiernachda/1.mp4" poster="./index/vonhiernachda/poster1.jpg" autoplay muted loop>
+        </a>
+
+
+
+
     </main>
     {{ partial "footer.html" . }}
   </body>

@@ -5,7 +5,7 @@ date: 2021-02-21
 description: ACID is short for Algorithms Create Image Data and is a general purpose video synthesizer with a GUI
 tags: [software]
 cat: Video Synthesizer, Programming Language
-relatedLinks: ["https://github.com/acidatm/acid","https://acidatm.itch.io/acid"]
+relatedLinks: ["https://github.com/softboydev/acid","https://softboydev.itch.io/acid"]
 relatedWorks: ["software/tram"]
 type: work
 weight: 10

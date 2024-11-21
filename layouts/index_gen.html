@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body id="index" class="index">
+    {{ partial "header.html" . }}
+    <main class="index_container">
+      <!-- <a href="/" title="test">
+        <video src="./index/test.mp4" poster="./index/test.jpg" autoplay muted loop>
+      </a> -->
+      {{ range (where site.Pages "Params.type" "work")}}
+        {{$slug := .RelPermalink}}
+        {{$title := .Title}}
+        {{$link := .Permalink}}
+        {{$flag := false}}
+        {{$videos := isset .Params "indexVideos" }}
+        {{ range .Params.index }}
+        {{if $videos}}
+
+        {{else}}
+        <a href="{{$link}}" title="{{$title}}">
+          <img {{if eq $flag false}}id="{{$title | urlize}}"{{end}} src="./index{{$slug}}{{.}}.jpg">
+        </a>
+        {{end}}
+        {{$flag = true}}
+        {{ end }}
+      {{end}}
+    </main>
+    {{ partial "footer.html" . }}
+  </body>
+</html>

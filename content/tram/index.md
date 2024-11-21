@@ -10,6 +10,7 @@ relatedWorks: ["software/acid"]
 type: work
 weight: 2
 index: [1,2,3]
+indexVideos: [3]
 ---
 
 The programming language is the first of my tries to create programming languages that can be explored rather then learned. Every character does something and there is no "wrong" syntax. This results in everybody being able to immedeatly do something without a need for understanding the actual underlying rules of the language.
