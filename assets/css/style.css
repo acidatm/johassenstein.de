@@ -2,7 +2,7 @@
 @font-face {
   font-family: "Arial";
   font-weight: 400;
-  src: url("../fonts/Arial.woff") format('woff');
+  src: url("/fonts/Arial.woff") format('woff');
 }
 
 *{
@@ -95,6 +95,9 @@ img,video{
 .imprint hr{
   height: 1rem;
   opacity: 0;
+}
+.cv a{
+  text-decoration: underline;
 }
 body.index{
   overflow-y: hidden;

@@ -1,3 +1,3 @@
 {{ $src := .Get 0 }}
 {{$path := print (path.Dir .Page.File.Path)}}
-<video class="video" src="/{{$path}}/{{$src}}.mp4" autoplay muted loop></video>
+<video class="video" src="/{{$path}}/{{$src}}.mp4" autoplay muted loop playsinline></video>
