@@ -10,4 +10,4 @@ type: work
 weight: 4
 index: [1]
 ---
-{{< video new>}}
+{{< video 1>}}
