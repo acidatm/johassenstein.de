@@ -20,5 +20,4 @@ type: work
 {{<img installation_2>}}
 {{<img installation_3>}}
 {{<img installation_4>}}
-{{<img installation_5>}}
 {{<img installation_6>}}
