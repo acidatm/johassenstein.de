@@ -16,3 +16,9 @@ type: work
 {{<img audacity>}}
 {{<img script>}}
 {{<video musicforbots>}}
+{{<img installation_1>}}
+{{<img installation_2>}}
+{{<img installation_3>}}
+{{<img installation_4>}}
+{{<img installation_5>}}
+{{<img installation_6>}}
