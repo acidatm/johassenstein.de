@@ -1,7 +1,7 @@
 ---
 title: Music For Bots
 date: 2021-06-01
-time: 2021-2023
+time: 2024-ongoing
 tags: [software]
 description: Research on music not intended for human consumption, the first ep containg ambient tracks made from all available sizes of random wikimedia commons images
 cat: Music, Algorithms, Videos
