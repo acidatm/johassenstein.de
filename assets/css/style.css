@@ -96,9 +96,6 @@ img,video{
   height: 1rem;
   opacity: 0;
 }
-.cv a{
-  text-decoration: underline;
-}
 body.index{
   overflow-y: hidden;
   overflow-x: scroll;
