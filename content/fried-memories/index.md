@@ -15,4 +15,7 @@ type: work
 {{<img exhibit_6440>}}
 {{<img exhibit_6445>}}
 {{<img exhibit_6443>}}
+{{<img eggs1>}}
+{{<img demo>}}
+{{<img cml>}}
 {{<youtube nGO95pklwAM>}}
