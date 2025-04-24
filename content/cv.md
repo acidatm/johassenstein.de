@@ -22,7 +22,7 @@ Voluntary work at gallery of Frappant e.V. until 2022
 
 Voluntary work organising youth IT workshops for Hacker Schools GmbH until 2020
 
-Web developer at yesdevs GmbH, until 2023
+Web developer at yesdevs GmbH until 2023
 
 ---
 ## 2020
@@ -69,3 +69,5 @@ Group exhibition with Art School Alliance
 Club board member of Frappant e.V. since 2025
 
 Exchange through ASA with CAA Hangzhou, China
+
+Participation ufo...loading project at TANK Gallery Shanghai, China
