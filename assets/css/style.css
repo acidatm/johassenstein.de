@@ -229,7 +229,8 @@ body.index{
   .index main a:last-of-type{
     padding-right: 0;
   }
-  .index main a:first-of-type img{
+  .index main a:first-of-type img,
+  .index main a:first-of-type video{
     padding-top: 20vh;
   }
   .index main a:last-of-type img,

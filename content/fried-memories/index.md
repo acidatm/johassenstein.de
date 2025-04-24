@@ -2,7 +2,7 @@
 title: Fried Memories
 date: 2025-01-01
 time: 2015-2025
-description: Research on the effects of image compression by repeatedly screenshotting social media posts from my time living in New Zealand
+description: Research on the effects of image compression by automating the process of screenshotting social media posts from my time living in New Zealand 1000 times.
 cat: algorithm, photos, videos
 type: work
 ---
