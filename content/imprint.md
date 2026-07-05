@@ -3,7 +3,7 @@ title: Imprint
 type: imprint
 ---
 ## Angaben gemäß § 5 TMG
-Johannes Hassenstein, Witthof 21, 22305 Hamburg
+Johannes Hassenstein
 
 ---
 ## Kontakt
@@ -11,7 +11,7 @@ E-Mail: johannes.hassenstein@pm.me
 
 ---
 ## Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
-Johannes Hassenstein, Witthof 21, 22305 Hamburg
+Johannes Hassenstein
 
 ---
 ## Haftung für Inhalte
